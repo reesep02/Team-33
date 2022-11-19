@@ -16,7 +16,11 @@ git branch -u origin/main
 Create a new textfile then run these commands to add it and commit it (type the message which says what you did) then push it.
 ```
 git add .
+```
+```
 git commit -m "your message here"
+```
+```
 git push
 ```
 #Setting up the project.
