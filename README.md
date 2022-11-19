@@ -60,7 +60,9 @@ php artisan voyager:admin admin@admin.com --create
 ```
 
 Then go to the Voyager admin pannel by placing admin in the url as such:
+
 http://localhost/Team-33/public/admin
+
 Login with your recently created admin account.
 
 That is it , Happy coding!
