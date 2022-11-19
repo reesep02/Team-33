@@ -30,7 +30,7 @@ Open a terminal in the project folder and run (this will take a while):
 composer install && composer update
 ```
 ```
-npm install && npm run buildls
+npm install && npm run build
 
 ```
 Open phpmyadmin and create a new database called "homestead".
