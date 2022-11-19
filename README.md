@@ -54,7 +54,7 @@ Run this to fix Voyager package:
 php artisan voyager:install
 ```
 
-Then create the admin account for the voyager admin pannel, the password will be asked for in the terminal:
+Then create the admin account for the voyager admin pannel, the password will be asked for in the terminal and the email is in the command (admin@admin.com):
 ```
 php artisan voyager:admin admin@admin.com --create
 ```
