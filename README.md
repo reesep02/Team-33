@@ -43,6 +43,7 @@ APP_URL=http://localhost/Team-33/public
 DB_DATABASE=homestead
 
 Then save the file.
+
 For (APP_KEY=) value , you must run the command in terminal it will autofill the APP_KEY feild in the .env file:
 ```
 php artisan key:generate
