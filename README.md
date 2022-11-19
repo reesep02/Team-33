@@ -6,7 +6,7 @@ First clone the project into the htdocs folder of your xampp installation :
 ```
 git clone https://github.com/reesep02/Team-33.git
 ```
-#Test if you have read/write rights to the github repo
+# Test if you have read/write rights to the github repo
 
 Set your working branch to main branch by running:
 ```
@@ -23,7 +23,7 @@ git commit -m "your message here"
 ```
 git push
 ```
-#Setting up the project.
+# Setting up the project.
 
 Open a terminal in the project folder and run (this will take a while):
 ```
