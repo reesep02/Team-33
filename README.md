@@ -37,7 +37,9 @@ Open phpmyadmin and create a new database called "homestead".
 Then create a .env file and copy everything from the .env.example file and fill fields with the correct info being:
 
 APP_NAME=Jewelz
+
 APP_URL=http://localhost/Team-33/public
+
 DB_DATABASE=homestead
 
 Then save the file.
