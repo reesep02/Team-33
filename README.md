@@ -31,7 +31,6 @@ composer install && composer update
 ```
 ```
 npm install && npm run build
-
 ```
 Open phpmyadmin and create a new database called "homestead".
 
