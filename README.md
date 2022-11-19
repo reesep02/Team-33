@@ -13,7 +13,7 @@ Set your working branch to main branch by running:
 git branch -u origin/main
 ```
 
-Create a new textfile then run these commands to add it and commit it (type the message which says what you did) then push it.
+Create a new textfile then run these commands to add it and commit it then push it.
 ```
 git add .
 ```
