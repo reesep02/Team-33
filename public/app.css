@@ -188,6 +188,7 @@
     .t2:nth-of-type(odd) {
         background: linear-gradient(to right, #cda330, #73622a);
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
@@ -196,6 +197,7 @@
     .t2:nth-of-type(even) {
         background: linear-gradient(to right, #762FC4, black 90%);
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
