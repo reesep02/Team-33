@@ -1,3 +1,4 @@
+//import './bootstrap';
 window.addEventListener('DOMContentLoaded', e => {
     document.querySelector('.one').style.animationName = 'fade-in-a';
 })
