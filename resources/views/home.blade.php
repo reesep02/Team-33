@@ -54,7 +54,7 @@
         <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
             irure dolor in reprehenderit in voluptate velit esse.</p>
         <p class="t4">
-            <a href=#>BROWSE</a>
+            <a href="{{ url('/') }}">BROWSE</a>
         </p>
     </div>
     <div id="section3">
