@@ -7,11 +7,11 @@
 
     <img src="{{ asset('images/JWZ_Logo.png') }}" style="width:50px;height:50px;">
     <h1>JEWELZ</h1>
-    <div class="user-details ">
+    <div class="user-details">
         <span><img src="{{ asset('images/user.png') }}" ></span>
         <span><img src="{{ asset('images/cart.png') }}" ></i></span>
     </div>
-    <nav id="nav-bar ">
+    <nav id="nav-bar">
         <ul>
             <li><a class="nav-link" href="#rings">RINGS</a></li>
             <li><a class="nav-link" href="#necklaces">NECKLACES</a></li>
