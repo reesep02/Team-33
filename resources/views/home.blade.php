@@ -8,8 +8,27 @@
     <img src="{{ asset('images/JWZ_Logo.png') }}" style="width:50px;height:50px;">
     <h1>JEWELZ</h1>
     <div class="user-details">
+        @guest
+            @if (Route::has('login'))
+                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            @endif
+            @if (Route::has('register'))
+                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            @endif
+        @else
         <span><img src="{{ asset('images/user.png') }}" ></span>
-        <span><img src="{{ asset('images/cart.png') }}" ></i></span>
+        <span><img src="{{ asset('images/cart.png') }}" ></span>
+        <span>
+            <a href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+        </span>
+        @endguest
     </div>
     <nav id="nav-bar">
         <ul>
