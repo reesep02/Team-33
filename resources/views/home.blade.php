@@ -41,43 +41,69 @@
 
     </nav>
 </header> --}}
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
-  <div class="container-fluid">
-    <a class="navbar-brand" href={{ url('/') }}>
-      <img src="{{ asset('images/JWZ_Logo.png') }}" alt="logo" width="50" height="50" class="d-inline-block align-text-center">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#rings">RINGS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#necklaces">NECKLACES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#bracelets">BRACELETS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#earrings">EARRINGS</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="{{ asset('images/JWZ_Logo.png') }}" alt="logo"  class="d-inline-block align-text-center">
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-  </div>
-</nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+               <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('#rings') }}">RINGS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('#necklaces') }}">NECKLACES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('#bracelets') }}">BRACELETS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('#earrings') }}">EARRINGS</a>
+                </li>
+                @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                    @endif
 
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <img src="{{ asset('images/user.png') }}" >
+                        {{ Auth::user()->name }}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        {{-- <li><a class="dropdown-item" href="#">Another action</a></li> --}}
+                        {{-- follow this formate to add more sections to the nav item dropdown button --}}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/') }}"><img src="{{ asset('images/cart.png') }}" ></a>
+                </li>
+                @endguest
+              </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 <main>
 
     <div class="section one">

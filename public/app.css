@@ -130,7 +130,7 @@
         background: #73622a;
         height: 100%;
         z-index: -1;
-        /*javascript used for animation-name setting*/
+
         animation-duration: 0.5s;
         animation-fill-mode: forwards;
     }
