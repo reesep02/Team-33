@@ -43,21 +43,21 @@
                 <h6>CATEGORIES</h6>
                 <ul class="footer-links">
                     <li>
-                        <a href="{{ url('/') }}">NECKLACES</a>
+                        <a href="{{ url('/#necklaces') }}">NECKLACES</a>
                     </li>
-                    <li><a href="{{ url('/') }}">RINGS</a></li>
+                    <li><a href="{{ url('/#rings') }}">RINGS</a></li>
                     <li>
-                        <a href="{{ url('/') }}">BRACELETS</a>
+                        <a href="{{ url('/#bracelets') }}">BRACELETS</a>
                     </li>
-                    <li><a href="{{ url('/') }}">EARRINGS</a></li>
+                    <li><a href="{{ url('/#earrings') }}">EARRINGS</a></li>
                 </ul>
             </div>
             <br>
             <div class="col-xs-6 col-md-3">
                 <h6>DISCOVER JEWELZ</h6>
                 <ul class="footer-links">
-                    <li><a href="{{ url('/') }}">ABOUT US</a></li>
-                    <li><a href="{{ url('/') }}">CONTACT US</a></li>
+                    <li><a href="{{ url('/about') }}">ABOUT US</a></li>
+                    <li><a href="{{ url('/contact') }}">CONTACT US</a></li>
                 </ul>
             </div>
         </div>
