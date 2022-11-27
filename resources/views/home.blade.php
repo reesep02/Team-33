@@ -96,7 +96,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}"><img src="{{ asset('images/cart.png') }}" ></a>
+                    <a class="nav-link" href="{{ url('/cart') }}"><img src="{{ asset('images/cart.png') }}" ></a>
                 </li>
                 @endguest
               </ul>
@@ -135,7 +135,7 @@
         <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
             irure dolor in reprehenderit in voluptate velit esse.</p>
         <p class="t4">
-            <a href="{{ url('/') }}">BROWSE</a>
+            <a href="{{ url('/product') }}">BROWSE</a>
         </p>
     </div>
     <div id="section3">
