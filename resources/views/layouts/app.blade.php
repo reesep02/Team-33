@@ -22,6 +22,70 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="{{ asset('images/JWZ_Logo.png') }}" alt="logo"  class="d-inline-block align-text-center">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+               <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/#rings') }}">RINGS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/#necklaces') }}">NECKLACES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/#bracelets') }}">BRACELETS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/#earrings') }}">EARRINGS</a>
+                </li>
+                @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                    @endif
+
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <img src="{{ asset('images/user.png') }}" >
+                        {{ Auth::user()->name }}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        {{-- <li><a class="dropdown-item" href="#">Another action</a></li> --}}
+                        {{-- follow this formate to add more sections to the nav item dropdown button --}}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/cart') }}"><img src="{{ asset('images/cart.png') }}" ></a>
+                </li>
+                @endguest
+              </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
 
 <div>
     <main>
@@ -30,7 +94,7 @@
  </div>
 
 
- <footer class="site-footer footer mt-auto py-3 bg-dark">
+ <footer class="site-footer sticky-bottom footer mt-auto py-3 bg-dark">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6">

@@ -3,7 +3,31 @@
 
 @section('content')
 
-<h1>this is the product page</h1>
+<section class="section-products">
+    <div class="container">
+            <div class="row justify-content-center text-center">
+                    <div class="col-md-8 col-lg-6">
+                            <div class="header" style="padding-top: 7em;padding-bottom: 2em; ">
+                                    <h3>Products Name</h3>
+                            </div>
+                    </div>
+            </div>
+            <div class="row">
+                    <!-- Single Product -->
+                    <div class="col-md-6 col-lg-4 col-xl-3" style="padding-bottom: 1em">
+                            <div>
+                                    <div class="part-1">
+                                        <img src="{{ asset('images/pexels-goran-vrakela-230290.jpg') }}" alt="ring" style="width: 200px; height:200px">
+                                    </div>
+                                    <div class="part-2">
+                                            <h3 class="product-title">Here Product Title</h3>
+                                            <h5 class="product-price">$49.99 <a href="#"><i class="fa fa-shopping-cart"></i></a> <a href="#"><i class="fa fa-heart"></i></a></h5>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</section>
 
 
 @endsection
