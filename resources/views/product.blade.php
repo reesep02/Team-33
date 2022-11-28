@@ -14,17 +14,19 @@
             </div>
             <div class="row">
                     <!-- Single Product -->
-                    <div class="col-md-6 col-lg-4 col-xl-3" style="padding-bottom: 1em">
+                    @foreach ($products as $product)
+                        <div class="col-md-6 col-lg-4 col-xl-3" style="padding-bottom: 1em">
                             <div>
-                                    <div class="part-1">
+                                    <div>
                                         <img src="{{ asset('images/pexels-goran-vrakela-230290.jpg') }}" alt="ring" style="width: 200px; height:200px">
                                     </div>
                                     <div class="part-2">
-                                            <h3 class="product-title">Here Product Title</h3>
-                                            <h5 class="product-price">$49.99 <a href="#"><i class="fa fa-shopping-cart"></i></a> <a href="#"><i class="fa fa-heart"></i></a></h5>
+                                            <h3 class="product-title">{{ $product->name }}</h3>
+                                            <h5 class="product-price">{{ $product->presentPrice() }}<a href="#"><i class="fa fa-shopping-cart"></i></a> <a href="#"><i class="fa fa-heart"></i></a></h5>
                                     </div>
                             </div>
-                    </div>
+                        </div>
+                    @endforeach
             </div>
     </div>
 </section>
