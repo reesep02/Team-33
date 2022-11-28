@@ -616,3 +616,26 @@
             font-weight: 600
         }
     }
+
+/* ....................... SITEWIDE INTERACTIVE ELEMENTS ............................*/
+/* This was implemented by Josh, feel free to move this elsewhere if you feel it doesn't belong in here just let me know where you move it to please, otherwise just delete this comment*/
+/* This is utilising the bootstrap elements*/
+
+.btn-primary{
+    background-color: #cc9c0c;
+    border-color: #cc9809;
+}
+
+.btn-primary:hover{
+    background-color: #ebb000;
+    border-color: #e2a600;
+}
+
+.btn-link {
+    color: #ebb000;
+}
+
+input[type] {
+    border: 3px;
+    background-color: #f3f3f3;
+}
