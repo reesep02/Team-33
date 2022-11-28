@@ -639,3 +639,25 @@ input[type] {
     border: 3px;
     background-color: #f3f3f3;
 }
+
+
+/* Shopping Cart */
+
+#cart-container table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#cart-container table thead{
+    font-weight: 700;
+}
+
+#cart-container table thead td{
+    background: rgb(249, 227, 103);
+}
+#cart-container table img{
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+}
