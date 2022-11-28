@@ -29,6 +29,29 @@
 
 
   </div>
+   <div class="atitle">
+    <p></p>
+    <h1> Get in touch</h1>
+
+  </div>
+  <div class="wrap">
+  <div class="contact-info">
+      <div class="card">
+        <i class="card-icon far fa-envelope"></i>
+        <p>info@Jewelz.com</p>
+      </div>
+
+      <div class="card">
+        <i class="card-icon fas fa-phone"></i>
+        <p>+44000000000</p>
+      </div>
+
+      <div class="card">
+        <i class="card-icon fas fa-map-marker-alt"></i>
+        <p>Birmingham, UK</p>
+      </div>
+    </div>
+  </div>
    <div class="container">
         <form>
             <h1>Contact Us Below</h1>
