@@ -5,7 +5,7 @@
     <div class="container-fluid my-5 border">
         <div class="row justify-content-center">
             <h1> LOGIN </h1>
-            <t2>Returning customer? welcome back.</t2>
+            <h2>Returning customer? welcome back.</h2>
             <h6>New around here? **Sign up here instead**</h6> <!-- be sure to add the hyperlink for the sign up page here-->
 
             <div class="container-fluid">
@@ -13,7 +13,7 @@
                 @csrf
                     <div class="container-xxl">
                         <div class="row mb-3">
-                            
+
                             <div class="col">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror " name="email" placeholder="Email Address" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-   
+
                     <div class="row mb-3 justify-content-center">
                         <div class="col-md-1">
                             <div class="form-check">
