@@ -661,3 +661,7 @@ input[type] {
     height: 80px;
     object-fit: cover;
 }
+
+.title-text {
+    font-weight:600;
+}

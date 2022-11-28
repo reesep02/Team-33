@@ -4,7 +4,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <div class="container mt-5 pt-3">
-        <h1>Register</h1>
+        <h1 class="title-text">REGISTER</h1>
         <h2>Welcome to the crew!</h2> <!-- This sounds awful but I need it as placeholder text-->
         <h6>Already have an account? <a class="btn btn-link" href="{{ Route('login') }}">Login here!</a></h6>
     </div>
@@ -45,9 +45,11 @@
                 </div>
 
                 <div class="row">
-                    <button type="submit" class="btn btn-primary">
-                        {{ __('Register') }}
-                    </button>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('Register') }}
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
