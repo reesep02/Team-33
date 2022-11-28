@@ -12,3 +12,54 @@ body {
     min-height: 100vh;
     background-color: indianred;
 }
+
+.wrapper{
+  width: 100%;
+}
+.atitle h1{
+  color: #f7f7f7;
+  font-size: 46px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 40px 0px;
+
+}
+.about{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  padding: 0px 80px;
+
+}
+
+.logo{
+  width: 90%;
+  height: auto;
+  margin: auto;
+}
+.logo img{
+  height: 280px;
+  width: 280px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  display: block;
+  margin: auto;
+}
+article{
+  width: 90%;
+}
+article h3{
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+article p{
+  font-size: 17px;
+  color: #ffffff;
+  margin-top: 25px;
+}
+

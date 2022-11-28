@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>About Jewelz</title>
-  <link rel="stylesheet" type="text/css" href="about.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('aboutus.css') }}">
 </head>
 
 <body>
