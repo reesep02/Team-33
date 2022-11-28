@@ -25,13 +25,6 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/register', function () {
-    return view('auth/register');
-});
-
-Route::get('/login', function () {
-    return view('auth/login');
-});
 
 
 Route::get('/shop','App\Http\Controllers\ShopController@index');
