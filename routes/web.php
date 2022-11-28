@@ -25,11 +25,12 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/product','App\Http\Controllers\ProductController@index');
 
-Route::get('/products', function () {
-    return view('products');
-});
+
+Route::get('/shop','App\Http\Controllers\ShopController@index');
+
+
+Route::get('/shop/{product}','App\Http\Controllers\ShopController@show')->name('shop.show');
 
 Route::get('/cart', function () {
     return view('cart');
