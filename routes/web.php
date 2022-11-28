@@ -27,10 +27,10 @@ Route::get('/test', function () {
 
 
 
-Route::get('/shop','App\Http\Controllers\shopController@index');
+Route::get('/shop','App\Http\Controllers\ShopController@index');
 
 
-Route::get('/shop/{product}','App\Http\Controllers\shopController@show')->name('shop.show');
+Route::get('/shop/{product}','App\Http\Controllers\ShopController@show')->name('shop.show');
 
 Route::get('/cart', function () {
     return view('cart');
