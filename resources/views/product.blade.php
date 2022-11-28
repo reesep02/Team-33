@@ -1,35 +1,63 @@
-
 @extends('layouts.app')
 
 @section('content')
 
-<section class="section-products">
-    <div class="container">
-            <div class="row justify-content-center text-center">
-                    <div class="col-md-8 col-lg-6">
-                            <div class="header" style="padding-top: 7em;padding-bottom: 2em; ">
-                                    <h3>Products Name</h3>
-                            </div>
-                    </div>
-            </div>
-            <div class="row">
-                    <!-- Single Product -->
-                    @foreach ($products as $product)
-                        <div class="col-md-6 col-lg-4 col-xl-3" style="padding-bottom: 1em">
-                            <div>
-                                    <div>
-                                        <img src="{{ asset('images/pexels-goran-vrakela-230290.jpg') }}" alt="ring" style="width: 200px; height:200px">
-                                    </div>
-                                    <div class="part-2">
-                                            <h3 class="product-title">{{ $product->name }}</h3>
-                                            <h5 class="product-price">{{ $product->presentPrice() }}<a href="#"><i class="fa fa-shopping-cart"></i></a> <a href="#"><i class="fa fa-heart"></i></a></h5>
-                                    </div>
-                            </div>
+<div class="container mt-5 mb-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="images p-3">
+                            <div class="text-center p-4"> <img id="main-image" src="https://i.imgur.com/Dhebu4F.jpg" width="250" alt="main-image" /> </div>
+                            <div class="thumbnail text-center"> <img onclick="change_image(this)" src="https://i.imgur.com/Rx7uKd0.jpg" width="70"> <img onclick="change_image(this)" src="https://i.imgur.com/Dhebu4F.jpg" width="70"> </div>
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product p-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center"> <a href="{{ url('/shop') }}"><i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span></a> </div> <a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart text-muted"></i></a>
+                            </div>
+                            <div class="mt-4 mb-3"> <h4> <span class="text-uppercase brand">{{$product->name}}</span> </h4>
+                                <h6 class="text">{{$product->details}}</h6>
+                                <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{$product->presentPrice()}}</span>
+
+                                </div>
+                            </div>
+                            <p class="about">{{$product->description}}</p>
+
+                            <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
     </div>
-</section>
+</div>
+
+
 
 
 @endsection
+{{-- This function diplays the product image that is clicked on--}}
+<script>
+    function change_image(image){
+
+                 var container = document.getElementById("main-image");
+
+                container.src = image.src;
+            }
+
+
+
+            document.addEventListener("DOMContentLoaded", function(event) {
+
+
+
+
+
+
+
+            });
+</script>
+
