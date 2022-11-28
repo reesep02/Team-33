@@ -23,19 +23,19 @@
                 <td><h3>Price</h3></td>
                 <td><h3>Quantity</h3></td>
                 <td><h3>Total</h3></td>
-            </tr>    
+            </tr>
         </thead>
         <tbody>
             <tr>
                 <td><button class="remove-product"> Remove </button></td>
-                <td><img class="img-fluid" src="images/wedding.jpg" alt="genders"></img></td>
+                <td><img class="img-fluid" src="images/wedding.jpg" alt="genders"></td>
                 <td><h4>Product Name</h4></td>
                 <td>300£</td>
                 <td><input class="w-25 pl-1" value="1" type = "number"></td>
 
             </tr>
         </tbody>
-    
+
     </table>
 </section>
 
