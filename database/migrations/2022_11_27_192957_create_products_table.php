@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('description');
             $table->boolean('featured')->default(false);
             $table->timestamps();
+            $table->text('type');
         });
     }
 
