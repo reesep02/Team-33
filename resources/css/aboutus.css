@@ -63,3 +63,33 @@ article p{
   margin-top: 25px;
 }
 
+
+@media screen and (max-width: 768px) {
+  .wrapper{
+    margin-top: 15px;
+  }
+  .atitle h1{
+    font-size: 28px;
+    text-align: center;
+  }
+  .logo img{
+    height: 200px;
+    width: 200px;
+  }
+  .about{
+    flex-direction: column;
+    margin-top: 10px;
+
+  }
+  article{
+    margin-top: 30px;
+  }
+  article h3{
+    font-size: 18px;
+  }
+  article p{
+    font-size: 15px;
+  }
+
+
+}
