@@ -7,6 +7,7 @@
   <meta charset="UTF-8">
   <title>About Jewelz</title>
   <link rel="stylesheet" type="text/css" href="{{ asset('aboutus.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 </head>
 
 <body>
