@@ -25,8 +25,15 @@
                                 </div>
                             </div>
                             <p class="about">{!! $product->description !!}</p>
-
-                            <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+                            <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $product->id }}">
+                                <input type="hidden" name="name" value="{{ $product->name }}">
+                                <input type="hidden" name="price" value="{{ $product->price }}">
+                                <button type="submit" class="button button-plain">Add to Cart</button>
+                            </form>
+                            <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button>  </div>
+                            <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i>
                         </div>
                     </div>
                 </div>

@@ -79,7 +79,11 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/cart') }}"><img src="{{ asset('images/cart.png') }}" ></a>
+                    <a class="nav-link" href="{{ route('cart.index') }}"><img src="{{ asset('images/cart.png') }}">
+                        @if (Cart::instance('default')->count() > 0)
+                            <span>{{ Cart::instance('default')->count() }}</span>
+                        @endif
+                    </a>
                 </li>
                 @endguest
               </ul>
