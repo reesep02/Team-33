@@ -80,9 +80,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('cart.index') }}"><img src="{{ asset('images/cart.png') }}">
-                        @if (Cart::instance('default')->count() > 0)
+                        {{-- @if (Cart::instance('default')->count() > 0)
                             <span>{{ Cart::instance('default')->count() }}</span>
-                        @endif
+                        @endif --}}
                     </a>
                 </li>
                 @endguest
