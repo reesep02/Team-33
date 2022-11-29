@@ -10,19 +10,19 @@
 body {
     width: 100%;
     min-height: 100vh;
-    background-color: indianred;
+    background-color: white;
 }
 
 .wrapper{
   width: 100%;
 }
 .atitle h1{
-  color: #f7f7f7;
+  color: black;
   font-size: 46px;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
-  padding: 40px 0px;
+  padding-top: 120px;
 
 }
 .about{
@@ -43,8 +43,7 @@ body {
 .logo img{
   height: 280px;
   width: 280px;
-  border-radius: 50%;
-  border: 1px solid #ffffff;
+
   display: block;
   margin: auto;
 }
@@ -54,12 +53,12 @@ article{
 article h3{
   font-size: 22px;
   font-weight: 500;
-  color: #ffffff;
+  color: black;
 }
 
 article p{
   font-size: 17px;
-  color: #ffffff;
+  color: black;
   margin-top: 25px;
 }
 
@@ -94,15 +93,15 @@ article p{
 
 }
 
-.container{
+.container1{
     min-height: 60vh;
-    background: indianred;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container form{
+.container1 form{
     width: 670px;
     height: 400px;
     display: flex;
@@ -114,15 +113,15 @@ article p{
     flex-wrap: wrap;
 }
 
-.container form h1{
-    color: #fff;
+.container1 form h1{
+    color: black;
     font-weight: 500;
     margin-top: 20px;
     width: 500px;
     text-align: center;
 }
 
-.container form input{
+.container1 form input{
     width: 290px;
     height: 40px;
     padding-left: 10px;
@@ -131,30 +130,30 @@ article p{
     font-size: 15px;
     margin-bottom: 10px;
     background: none;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid black;
 }
 
-.container form input::placeholder{
-    color: #ddd;
+.container1 form input::placeholder{
+    color: black;
 }
 
-.container form #lastName,
-.container form #mobile{
+.container1 form #lastName,
+.container1 form #mobile{
     margin-left: 20px;
 }
 
-.container form h4{
-    color: #fff;
+.container1 form h4{
+    color: black;
     font-weight: 300;
     width: 600px;
     margin-top: 20px;
 }
 
-.container form textarea{
+.container1 form textarea{
     background: none;
     border: none;
-    border-bottom: 2px solid #fff;
-    color: #fff;
+    border-bottom: 2px solid black;
+    color: black;
     font-weight: 200;
     font-size: 15px;
     padding: 10px;
@@ -173,14 +172,14 @@ textarea::-webkit-scrollbar-thumb{
     background-color: rgba(194,194,194,0.713);
 }
 
-.container form #button{
+.container1 form #button{
     border: none;
-    background: #fff;
+    background: #26272b;
     border-radius: 5px;
     margin-top: 20px;
     font-weight: 600;
     font-size: 20px;
-    color: #333;
+    color: white;
     width: 100px;
     padding: 0;
     margin-right: 500px;
@@ -188,12 +187,12 @@ textarea::-webkit-scrollbar-thumb{
     transition: 0.3s;
 }
 
-.container form #button:hover{
+.container1 form #button:hover{
     opacity: 0.7;
 }
 
 .wrap{
-  background: indianred;
+  background: white;
   min-height: 40vh;
   display: flex;
   align-items: center;
@@ -216,7 +215,7 @@ textarea::-webkit-scrollbar-thumb{
   padding: 0 20px;
   margin: 0 10px;
   width: calc(33% - 20px);
-  height: 200px;
+  height: 175px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,7 +228,7 @@ textarea::-webkit-scrollbar-thumb{
 
 .card-icon{
   font-size: 28px;
-  background: #ff6348;
+  background : black;
   width: 60px;
   height: 60px;
   text-align: center;
@@ -240,7 +239,7 @@ textarea::-webkit-scrollbar-thumb{
 
 .card:hover .card-icon{
   background: none;
-  color: #ff6348;
+  color: #f7c02b;
   transform: scale(1.6);
 }
 
@@ -251,6 +250,7 @@ textarea::-webkit-scrollbar-thumb{
   max-height: 0;
   opacity: 0;
   transition: 0.3s linear;
+    color: black;
 }
 
 .card:hover p{
