@@ -1,7 +1,7 @@
 <?php
-use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Route;
+use Gloudemans\Shoppingcart\Facades\Cart;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
