@@ -73,6 +73,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
+                        <li><a class="dropdown-item" href="{{url('myProfile')}}">My Profile</a></li>
                         {{-- <li><a class="dropdown-item" href="#">Another action</a></li> --}}
                         {{-- follow this formate to add more sections to the nav item dropdown button --}}
                     </ul>
