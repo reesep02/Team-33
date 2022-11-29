@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 use DB;
+use Cart;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Gloudemans\Shoppingcart\Facades\Cart;
+// use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
