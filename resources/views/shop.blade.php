@@ -34,3 +34,4 @@
 
 @endsection
 {{-- href="shop/{{ $product->name }}" --}}
+{{-- {{ route("shop.show", $product->name)}} --}}

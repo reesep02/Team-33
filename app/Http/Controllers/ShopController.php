@@ -12,10 +12,9 @@ class ShopController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($type)
     {
-        $products = Shop::all();
-
+        $products = Shop::where('type', $type)->get();
         return view('shop')->with('products', $products);
     }
 

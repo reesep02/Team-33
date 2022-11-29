@@ -16,7 +16,7 @@
                     <div class="col-md-6">
                         <div class="product p-4">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center"> <a href="{{ url('/shop') }}"><i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span></a> </div> <a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart text-muted"></i></a>
+                                <div class="d-flex align-items-center"> <a href="{{ route("shopIndex", $product->type)}}"><i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span></a> </div> <a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart text-muted"></i></a>
                             </div>
                             <div class="mt-4 mb-3"> <h4> <span class="text-uppercase brand">{{$product->name}}</span> </h4>
                                 <h6 class="text">{{$product->details}}</h6>

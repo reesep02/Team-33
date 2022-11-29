@@ -36,7 +36,7 @@
         <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
             irure dolor in reprehenderit in voluptate velit esse.</p>
         <p class="t4">
-            <a href="{{ url('/shop') }}">BROWSE</a>
+            <a href="{{ url('/shop-ring') }}">BROWSE</a>
         </p>
     </div>
     <div id="section3">
@@ -48,7 +48,7 @@
         <p class="t2">SOMETHING CATCHY</p>
         <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
             irure dolor.</p>
-        <p class="t4"><a href="{{ url('/') }}">BROWSE</a></p>
+        <p class="t4"><a href="{{ url('/shop-necklace') }}">BROWSE</a></p>
     </div>
     <div id='section4'>
         <img src="{{ asset('images/pexels-lalesh-aldarwish-147637.jpg') }}" alt="necklace">
@@ -58,7 +58,7 @@
         <p class="t1">BRACELETS</p>
         <p class="t2">SOMETHING CATCHY</p>
         <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-        <p class="t4"><a href="{{ url('/') }}">BROWSE</a></p>
+        <p class="t4"><a href="{{ url('/shop-bracelet') }}">BROWSE</a></p>
     </div>
     <div id='section5'>
         <img src="{{ asset('images/pexels-hassan-ouajbir-678327.jpg') }}" alt="bracelet">
@@ -69,7 +69,7 @@
         <p class="t2">SOMETHING CATCHY</p>
         <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
             irure dolor in reprehenderit in voluptate velit esse.</p>
-        <p class="t4"><a href="{{ url('/') }}">BROWSE</a></p>
+        <p class="t4"><a href="{{ url('/shop-earring') }}">BROWSE</a></p>
     </div>
     <div id='section6'>
         <img src="{{ asset('images/pexels-joão-rabelo-10218611.jpg') }}" alt="earring">

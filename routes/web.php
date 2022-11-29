@@ -27,7 +27,7 @@ Route::get('/test', function () {
 
 
 
-Route::get('/shop','App\Http\Controllers\ShopController@index');
+Route::get('/shop-{type}','App\Http\Controllers\ShopController@index')->name('shopIndex');
 
 
 Route::get('/shop/{product}','App\Http\Controllers\ShopController@show')->name('shop.show');
