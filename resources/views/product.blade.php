@@ -113,6 +113,7 @@
                                 <img src="{{asset ('images/img.3.jpg') }}" alt="jewellery image">
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div class= "img-select">
                         <div class= "img-item">
                             <a href= "#" data-id = "1">
@@ -128,6 +129,26 @@
                             <a href= "#" data-id = "3">
                                 <img src= "{{asset ('images/img.3.jpg') }}" alt="jewellery image">
                             </a>
+=======
+                    <div class="col-md-6">
+                        <div class="product p-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center"> <a href="{{ route("shopIndex", $product->type)}}"><i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span></a> </div> <a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart text-muted"></i></a>
+                            </div>
+                            <div class="mt-4 mb-3"> <h4> <span class="text-uppercase brand">{{$product->name}}</span> </h4>
+                                <h6 class="text">{{$product->details}}</h6>
+                                <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{$product->presentPrice()}}</span>
+
+                                </div>
+                            </div>
+                            <p class="about">{!! $product->description !!}</p>
+                            <form action="{{ route('cart.store', $product) }}" method="POST">
+                                {{ csrf_field() }}
+                                <button type="submit" class="button button-plain">Add to Cart</button>
+                            </form>
+                            <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button>  </div>
+                            <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i>
+>>>>>>> 4d2101b5e5015f4bbf5bc7a48878471b4960e6f0
                         </div>
                     </div>
                    </div>

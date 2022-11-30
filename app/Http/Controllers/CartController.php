@@ -33,21 +33,21 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Shop  $product
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Shop $product)
     {
-        $duplicates = Cart::search(function($cartItem, $rowId) use ($request)
+        $duplicates = Cart::search(function($cartItem, $rowId) use ($product)
         {
-            return $cartItem->id === $request->id;
+            return $cartItem->id === $product->id;
         });
 
         if ($duplicates->isNotEmpty()){
             return redirect()->route('cart.index')->with('success_message', "Item is Already in Your Cart!");
         }
 
-        Cart::add($request->id, $request->name, 1, $request->price)->associate('App\Models\Shop');
+        Cart::add($product->id, $product->name, 1, $product->price)->associate('App\Models\Shop');
 
         return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart!');
     }
@@ -103,4 +103,31 @@ class CartController extends Controller
 
         return back()->with('success_message', 'Item Has Been Removed!');
     }
+
+    /**
+     * $witch item for shopping cart to save for later.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function switchToSaveForLater($id)
+    {
+        $item=Cart::get($id);
+
+        Cart::remove($id);
+
+        $duplicates = Cart::instance('saveForLater')->search(function ($cartItem, $rowId) use ($id) {
+            return $rowId === $id;
+        });
+
+        if ($duplicates->isNotEmpty()) {
+            return redirect()->route('cart.index')->with('success_message', 'Item is already Saved For Later!');
+        }
+
+        Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)->associate('App\Models\Shop');
+
+        return redirect()->route('cart.index')->with('success_message', 'Item Has Been Saved For Later!');
+    }
+
+
 }
