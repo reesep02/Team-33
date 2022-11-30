@@ -18,6 +18,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('app.css') }}">
     <link rel="stylesheet" href="{{ asset('productpage.css') }}">
+
+    <style>
+
+        .small-img-group{
+            display: flex;
+            justify-content: space-between;
+        }
+        .small-img-col{
+            flex-basis: 33%;
+            cursor: pointer;
+        }
+        .sproduct select{
+            display:block;
+            padding: 5px 10px;
+        }
+        .sproduct input{
+            width: 50px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 16px;
+            margin-right: 10px
+        }
+
+
+
+
+    </style>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Scripts -->
@@ -102,7 +129,7 @@
     <section class="container sproduct my-5 pt-5">
         <div class="row mt-5">
             <div class="col-lg-5 col-md-12 col-12">
-                <img class="img-fluid w-100"src="{{asset ('images/img.1.jpg') }}" alt="">
+                <img class="img-fluid w-100 pb-1"src="{{asset ('images/img.1.jpg') }}" alt="">
 
                 <div class="small-img-group">
                     <div class="small-img-col">
@@ -116,7 +143,23 @@
                     </div>
                 </div>
             </div>
-            <div></div>
+            <div class="col-lg-6 col-md-12 col-12">
+                <h6>Home / NECKLACE</h6>
+                <h3 class="py-4">Rhinestone Decor Chain Necklace</h3>
+                <h2>£249.00</h2>
+                <select class="my-3">
+                    <div class = "product-size">
+                        <p class = "Size">Size:
+                            <button type = "button" class = "btn">
+                                One-size <i class=""></i>
+                        </p>
+                    </div>
+                </select>
+                <input type="number" value="1">
+                <button class="buy-btn">Add To Cart</button>
+                <h4 class="mt-5 mb-5">Product Details</h4>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem iste sapiente laudantium totam aliquid accusamus delectus quae at. Minima perferendis blanditiis aut at hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, itaque nulla magnam reprehenderit sunt esse!</span>
+            </div>
         </div>
     </section>
 
