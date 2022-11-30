@@ -12,12 +12,13 @@ body{
 .card-wrapper{
     max-width: 1100px;
     margin: 0 auto;
+ 
 }
 img{
     width: 100%;
     display: block;
-
 }
+
 .img-display{
     overflow: hidden;
 }
@@ -121,7 +122,7 @@ img{
 .product-detail ul li{
     margin: 0;
     list-style: none;
-    background: url(img/checked.png) left center no-repeat;
+    background: url(images/checked.png) left center no-repeat;
     background-size: 18px;
     padding-left: 1.7rem;
     margin: 0.4rem 0;
