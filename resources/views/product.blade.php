@@ -97,114 +97,41 @@
     </nav>
 </header>
 
+<body>
 
+    <section class="container sproduct my-5 pt-5">
+        <div class="row mt-5">
+            <div class="col-lg-5 col-md-12 col-12">
+                <img class="img-fluid w-100"src="{{asset ('images/img.1.jpg') }}" alt="">
 
-<div>
-    <main>
-        <body>
-            <div class="card-wrapper">
-                <div class="card">
-                    <!-- card left -->
-                   <div class="product-imgs">
-                    <div class="img-display">
-                        <div class="img-showcase">
-                                <img src="{{asset ('images/img.1.jpg') }}" alt="jewellery image">
-                                <img src="{{asset ('images/img.2.jpg') }}" alt="jewellery image">
-                                <img src="{{asset ('images/img.3.jpg') }}" alt="jewellery image">
-                        </div>
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="{{asset ('images/img.1.jpg') }}" width="100%" class="small-img" alt="">
                     </div>
-<<<<<<< HEAD
-                    <div class= "img-select">
-                        <div class= "img-item">
-                            <a href= "#" data-id = "1">
-                                <img src= "{{asset ('images/img.1.jpg') }}" alt="jewellery image">
-                            </a>
-                        </div>
-                        <div class= "img-item">
-                            <a href= "#" data-id = "2">
-                                <img src= "{{asset ('images/img.2.jpg') }}" alt="jewellery image">
-                            </a>
-                        </div>
-                        <div class= "img-item">
-                            <a href= "#" data-id = "3">
-                                <img src= "{{asset ('images/img.3.jpg') }}" alt="jewellery image">
-                            </a>
-=======
-                    <div class="col-md-6">
-                        <div class="product p-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center"> <a href="{{ route("shopIndex", $product->type)}}"><i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span></a> </div> <a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart text-muted"></i></a>
-                            </div>
-                            <div class="mt-4 mb-3"> <h4> <span class="text-uppercase brand">{{$product->name}}</span> </h4>
-                                <h6 class="text">{{$product->details}}</h6>
-                                <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{$product->presentPrice()}}</span>
-
-                                </div>
-                            </div>
-                            <p class="about">{!! $product->description !!}</p>
-                            <form action="{{ route('cart.store', $product) }}" method="POST">
-                                {{ csrf_field() }}
-                                <button type="submit" class="button button-plain">Add to Cart</button>
-                            </form>
-                            <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button>  </div>
-                            <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i>
->>>>>>> 4d2101b5e5015f4bbf5bc7a48878471b4960e6f0
-                        </div>
+                    <div class="small-img-col">
+                        <img src="{{asset ('images/img.2.jpg') }}" width="100%" class="small-img" alt="">
                     </div>
-                   </div>
-                    <!--- card right --->
-                    <div class="product content">
-                        <h2 class="product-title">Rhinestone Decor Chain Necklace</h2>
-                        <div class = "product-price">
-                            <p class = "price">Price: <span>£249.00
-                            </span></p>
-                        </div>
-                        <div class = "product-size">
-                            <p class = "Size">Size:
-                                <button type = "button" class = "btn">
-                                    One-size <i class=""></i>
-                            </p>
-        
-                        </div>
-                        <div class= "product-detail">
-                            <h2>About this item: </h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem iste sapiente laudantium totam aliquid accusamus delectus quae at. Minima perferendis blanditiis aut at hic.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, itaque nulla magnam reprehenderit sunt esse!</p>
-                            <ul>
-                              <li>Color: <span>Silver</span></li>
-                              <li>Available: <span>In stock</span></li>
-                              <li>Category: <span>Jewellery</span></li>
-                              <li>Shipping Area: <span>All over the world</span></li>
-                              <li>Shipping fee: <span>Free</span></li>  
-                            </ul>
-                        </div>
-        
-        
-                        <div class = "purchase-info">
-                            <input type = "number" min ="0" value = "1">
-                            <button type = "button" class = "btn">
-                                Add to Cart <i class = "fas fa-shopping-cart"></i>
-                            </button>
-                            
-                            </div>
-                        
-        
-                        </div>
-        
+                    <div class="small-img-col">
+                        <img src="{{asset ('images/img.3.jpg') }}" width="100%" class="small-img" alt="">
                     </div>
-                    
                 </div>
-                
             </div>
-        
-        
-        
-        
-            
-        </body>
-        
-    </main>
- </div>
+            <div></div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
 
 
 
