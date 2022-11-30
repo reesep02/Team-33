@@ -6,13 +6,15 @@
     <link rel="icon" type="image/png" href="{{ asset('favicon.jpg') }}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
 
     <title>{{ config('app.name', 'Jewelz') }}</title>
 
     <!-- Fonts -->
-    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
+     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> --}}
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> 
+    
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -40,6 +42,68 @@
             font-size: 16px;
             margin-right: 10px
         }
+        .sproduct input:focus{
+            outline: none
+        }
+        .buy-btn{
+            border: 1.5px solid #000000;
+            border-radius: 25px;
+            text-align: center;
+            padding: 0.45rem 0.8rem;
+            outline: 0;
+            margin-right: 0.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .buy-btn{
+            background: orange;
+            opacity: 1;
+            transition: 0.3s all;
+        }
+        .product-size{
+            margin: 1rem 0;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .product-size .btn{
+            text-align: center;
+            margin-right: 0.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            border-width: 1.5px;
+            border-style: solid;
+            border-color: rgb(0, 0, 0);
+            border-image: initial;
+            border-radius: 25px;
+            padding: 0.45rem 0.8rem;
+            outline: 0px;
+        }
+        .product-size .btn{
+            cursor: pointer;
+            color:  black;
+            background: rgb(255, 253, 253);
+        }
+        .product-size .btn:hover{
+            opacity: 0.9;
+        }
+        .Product-info ul{
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .Product-info ul li{
+            margin: 0;
+            list-style: none;
+            background: url(images/checked.png) left center no-repeat;
+            background-size: 18px;
+            padding-left: 1.7rem;
+            margin: 0.4rem 0;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        .Product-info ul li span{
+            font-weight: 400;
+        }
 
 
 
@@ -50,7 +114,7 @@
     <!-- Scripts -->
     {{-- <script src="{{asset('app.js')}}"></script> --}}
 
-    <script src="{{asset('script.js')}}"></script>
+    {{-- <script src="{{asset('script.js')}}"></script> --}}
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -129,7 +193,7 @@
     <section class="container sproduct my-5 pt-5">
         <div class="row mt-5">
             <div class="col-lg-5 col-md-12 col-12">
-                <img class="img-fluid w-100 pb-1"src="{{asset ('images/img.1.jpg') }}" alt="">
+                <img class="img-fluid w-100 pb-1"src="{{asset ('images/img.1.jpg') }}" id="MainImg" alt="">
 
                 <div class="small-img-group">
                     <div class="small-img-col">
@@ -147,26 +211,50 @@
                 <h6>Home / NECKLACE</h6>
                 <h3 class="py-4">Rhinestone Decor Chain Necklace</h3>
                 <h2>£249.00</h2>
-                <select class="my-3">
                     <div class = "product-size">
                         <p class = "Size">Size:
                             <button type = "button" class = "btn">
                                 One-size <i class=""></i>
                         </p>
                     </div>
-                </select>
                 <input type="number" value="1">
-                <button class="buy-btn">Add To Cart</button>
-                <h4 class="mt-5 mb-5">Product Details</h4>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem iste sapiente laudantium totam aliquid accusamus delectus quae at. Minima perferendis blanditiis aut at hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, itaque nulla magnam reprehenderit sunt esse!</span>
+                <button class= "buy-btn">Add To Cart</button>
+                <h4 class= "mt-5 mb-5">Product Details</h4>
+                <div class= "Product-info">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem iste sapiente laudantium totam aliquid accusamus delectus quae at. Minima perferendis blanditiis aut at hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, itaque nulla magnam reprehenderit sunt esse!</p>
+                    <ul>
+                        <li>Color: <span>Silver</span></li>
+                        <li>Available: <span>In stock</span></li>
+                        <li>Category: <span>Jewellery</span></li>
+                        <li>Shipping Area: <span>All over the world</span></li>
+                        <li>Shipping fee: <span>Free</span></li> 
+                     </ul>
+                        
+                    
+                </div>
             </div>
         </div>
+
     </section>
 
 
 
+    <script>
 
 
+      var MainImg = document.getElementById('MainImg');
+      var smallimg = document.getElementsByClassName('small-img')
+    
+     smallimg[0].onclick = function(){
+        MainImg.src = smallimg[0].src;
+     }
+     smallimg[1].onclick = function(){
+        MainImg.src = smallimg[1].src;
+     }
+     smallimg[2].onclick = function(){
+        MainImg.src = smallimg[2].src;
+     }
+    </script>
 
 
 
@@ -180,7 +268,7 @@
 
 
 
- <footer class="site-footer sticky-bottom footer mt-auto py-3 bg-dark">
+<footer class="site-footer sticky-bottom footer mt-auto py-3 bg-dark">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6">
