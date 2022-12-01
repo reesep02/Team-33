@@ -51,7 +51,7 @@
         <p class="t4"><a href="{{ url('/shop-necklace') }}">BROWSE</a></p>
     </div>
     <div id='section4'>
-        <img src="{{ asset('images/pexels-lalesh-aldarwish-147637.jpg') }}" alt="necklace">
+        <img src="{{ asset('images/pexels-goran-vrakela-230290.jpg') }}" alt="necklace">
     </div>
 
     <div class="section five" id="bracelets">
@@ -61,7 +61,7 @@
         <p class="t4"><a href="{{ url('/shop-bracelet') }}">BROWSE</a></p>
     </div>
     <div id='section5'>
-        <img src="{{ asset('images/pexels-hassan-ouajbir-678327.jpg') }}" alt="bracelet">
+        <img src="{{ asset('images/pexels-goran-vrakela-230290.jpg') }}" alt="bracelet">
     </div>
 
     <div class="section six" id="earrings">
@@ -72,7 +72,7 @@
         <p class="t4"><a href="{{ url('/shop-earring') }}">BROWSE</a></p>
     </div>
     <div id='section6'>
-        <img src="{{ asset('images/pexels-joão-rabelo-10218611.jpg') }}" alt="earring">
+        <img src="{{ asset('images/pexels-goran-vrakela-230290.jpg') }}" alt="earring">
     </div>
 
 </main>
