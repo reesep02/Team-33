@@ -8,7 +8,7 @@
             <div class="row justify-content-center text-center">
                     <div class="col-md-8 col-lg-6">
                             <div class="header" style="padding-top: 7em;padding-bottom: 2em; ">
-                                    <h3>Products Name</h3>
+                                    <h3>{{Str::of(last(request()->segments()))->trim('shop-')->ucfirst().'s'}}</h3>
                             </div>
                     </div>
             </div>
@@ -22,7 +22,7 @@
                                     </div>
                                     <div class="part-2">
                                             <a href="{{ route("shop.show", $product->name)}}"><h3 class="product-title">{{ $product->name }}</h3></a>
-                                            <h5 class="product-price">{{ $product->presentPrice() }}<a href="#"><i class="fa fa-shopping-cart"></i></a> <a href="#"><i class="fa fa-heart"></i></a></h5>
+                                            <h5 class="product-price">{{ $product->presentPrice() }}</i></a></h5>
                                     </div>
                             </div>
                         </div>

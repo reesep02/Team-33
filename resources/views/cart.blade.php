@@ -205,18 +205,22 @@
                         <div class="card">
                             <div class="card-body">
                                 <dl class="dlist-align">
-                                    <dt>Price:</dt>
+                                    <dt style="margin-right:10px">Price:</dt>
                                     <dd class="text-right ml-3"> {{ presentPrice(Cart::subtotal()) }}</dd>
                                 </dl>
                                 <dl class="dlist-align">
-                                    <dt>20% VAT:</dt>
+                                    <dt style="margin-right: 10px">20% VAT:</dt>
                                     <dd class="text-right ml-3">{{ presentPrice(Cart::tax()) }}</dd>
                                 </dl>
                                 <dl class="dlist-align">
-                                    <dt>Price With VAT:</dt>
+                                    <dt style="margin-right: 10px">Price With VAT:</dt>
                                     <dd class="text-right text-dark b ml-3"><strong>{{ presentPrice(Cart::total()) }}</strong></dd>
                                 </dl>
-                                <hr> <a href="{{ route('checkout.index') }}" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a href="{{ url('/') }}" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+                                <hr>
+                                @if (Cart::count() > 0)
+                                <a href="{{ route('checkout.index') }}" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a>
+                                @endif
+                                <a href="{{ url('/') }}" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
                             </div>
                         </div>
                     </aside>
