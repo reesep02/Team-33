@@ -127,7 +127,7 @@
                 <h6>DISCOVER JEWELZ</h6>
                 <ul class="footer-links">
                     <li><a href="{{ url('/contact') }}">ABOUT US</a></li>
-                    <li><a href="{{ url('/contact',['#contact']) }}">CONTACT US</a></li>
+                    <li><a href="{{ url('/contact') }}#contact">CONTACT US</a></li>
                 </ul>
             </div>
         </div>
