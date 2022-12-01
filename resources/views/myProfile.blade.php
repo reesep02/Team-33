@@ -8,7 +8,7 @@
 <body class="d-flex flex-column min-vh-100">
     <section id="banner" class="my-5 py-4">
         <div class="container-flex">
-            <h5 class="pt-3 title-text">Welcome back, user </h5>
+            <h5 class="pt-3 title-text">Welcome back, Thomas </h5>
         </div>
     </section>
 
@@ -23,11 +23,11 @@
             <!-- rework for update details -->
             @csrf
             <div class="row mb-4">
-                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" value="Thomas" required autocomplete="name" autofocus>
             </div>
 
             <div class="row mb-4">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="thomas@gmail.com" required autocomplete="email">
                 @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
