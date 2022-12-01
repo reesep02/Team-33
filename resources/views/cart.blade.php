@@ -1,133 +1,204 @@
-
-@extends('layouts.app')
-
-
-@section('content')
-@guest
-    <h1 style="padding: 5rem">Please Login to access your cart</h1>
-@else
-    <section class="Shopping Cart">
-        <div class="container">
-                <div class="row justify-content-center text-center">
-                        <div class="col-md-8 col-lg-6">
-                                <div class="header" style="padding-top: 7em;padding-bottom: 2em; ">
-                                        <h1>Shopping Cart</h1>
-                                </div>
-                                @if (session()->has('success_message'))
-                                    <div class="alert alert-success">
-                                        {{ session()->get('success_message') }}
-                                    </div>
-                                @endif
-
-                                @if(count($errors) > 0)
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-
-                                @if (Cart::count() > 0)
-                                <h4>{{Cart::count() }} item(s) in Shopping Cart</h4>
-                        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');body{background-color: #eeeeee;font-family: 'Open Sans',serif;font-size: 14px}.container-fluid{margin-top:70px}.card-body{-ms-flex: 1 1 auto;flex: 1 1 auto;padding: 1.40rem}.img-sm{width: 80px;height: 80px}.itemside .info{padding-left: 15px;padding-right: 7px}.table-shopping-cart .price-wrap{line-height: 1.2}.table-shopping-cart .price{font-weight: bold;margin-right: 5px;display: block}.text-muted{color: #969696 !important}a{text-decoration: none !important}.card{position: relative;display: -ms-flexbox;display: flex;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0,0,0,.125);border-radius: 0px}.itemside{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%}.dlist-align{display: -webkit-box;display: -ms-flexbox;display: flex}[class*="dlist-"]{margin-bottom: 5px}.coupon{border-radius: 1px}.price{font-weight: 600;color: #212529}.btn.btn-out{outline: 1px solid #fff;outline-offset: -5px}.btn-main{border-radius: 2px;text-transform: capitalize;font-size: 15px;padding: 10px 19px;cursor: pointer;color: #fff;width: 100%}.btn-light{color: #ffffff;background-color: #F44336;border-color: #f8f9fa;font-size: 12px}.btn-light:hover{color: #ffffff;background-color: #F44336;border-color: #F44336}.btn-apply{font-size: 11px}
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.jpg') }}">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ config('app.name', 'Jewelz') }}</title>
+</head>
+<body>
+    @guest
+    <h1>Login to view cart<h1>
+    @else
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-lg-9">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-shopping-cart">
+                            <thead class="text-muted">
+                                <tr class="small text-uppercase">
+                                    <th scope="col">Product</th>
+                                    <th scope="col" width="120">Quantity</th>
+                                    <th scope="col" width="120">Price</th>
+                                    <th scope="col" class="text-right d-none d-md-block" width="200"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside"><img src="https://i.imgur.com/1eq5kmC.png" class="img-sm"></div>
+                                            <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Tshirt with round nect</a>
+                                                <p class="text-muted small">SIZE: L <br> Brand: MAXTRA</p>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    @foreach (Cart::content() as $item)
+                                    <td> <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
+                                            @for ($i = 1; $i < 5 + 1 ; $i++)
+                                                <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                            @endfor
+                                        </select></td>
+                                    @endforeach
+                                    <td>
+                                        <div class="price-wrap"> <var class="price">$10.00</var> <small class="text-muted"> $9.20 each </small> </div>
+                                    </td>
+                                    <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light" data-abc="true"> Remove</a> </td>
+                                </tr>
+                                {{-- <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside"><img src="https://i.imgur.com/hqiAldf.jpg" class="img-sm"></div>
+                                            <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Flower Formal T-shirt</a>
+                                                <p class="text-muted small">SIZE: L <br> Brand: ADDA </p>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td> <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select> </td>
+                                    <td>
+                                        <div class="price-wrap"> <var class="price">$15</var> <small class="text-muted"> $12 each </small> </div>
+                                    </td>
+                                    <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
+                                </tr> --}}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                                <section id="cart-container" class="container my-5">
-                                    <table width="100%">
-                                        <thead>
-                                            <tr>
-                                                <td><h3></h3></td>
-                                                <td><h3></h3></td>
-                                                <td><h3></h3></td>
-                                                <td><h3>Product</h3></td>
-                                                <td><h3>Price</h3></td>
-                                                <td><h3>Quantity</h3></td>
-                                                <td><h3>Total</h3></td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (Cart::content() as $item)
-                                            <tr>
-                                                {{-- <td><button class="remove-product"> Remove </button></td> --}}
-                                                <td><h4><form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE') }}
-                                                    <button type="submit">Remove</button>
-                                                </form></h4></td>
-                                                <td><h4><form action="{{ route('cart.switchToSaveForLater', $item->rowId) }}" method="POST">
-                                                    {{ csrf_field() }}
-                                                    <button type="submit">Save For Later</button>
-                                                </form></h4></td>
-                                                <td><a href="{{ route('shop.show', $item->model->name) }}"><img class="img-fluid" src="images/wedding.jpg" alt="image"></a></td>
-                                                <td><a href="{{ route('shop.show', $item->model->name) }}"><h4>{{ $item->model->name }}</h4></a></td>
-                                                <td><h4>{{ $item->model->presentPrice() }}</h4></td>
-                                                <td><input class="w-25 pl-1" value="1" type = "number"></td>
-                                            @endforeach
-                                                <td>SubTotal {{ presentPrice(Cart::subtotal()) }} ..
-                                                    Tax {{ presentPrice(Cart::tax()) }} ..
-                                                    Total With 20% VAT {{ presentPrice(Cart::total()) }}
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </section>
-                                    <h3><a href="{{url('/')}}">Continue Shopping</a><h3>
-                                    <h3><a href="{{route('checkout.index')}}">CheckOut</a></h3>
-                                 @else
-                                 <h3>No items in Cart!</h3>
-                                 <h3><a href="{{url('/')}}">Continue Shopping</a><h3>
-                                 @endif
-                                    @if (Cart::instance('saveForLater')->count() > 0)
-                                 <h4>{{Cart::instance('saveForLater')->count() }} Item(s) Saved For Later</h4>
-                                 <section id="cart-container" class="container my-5">
-                                        <table width="100%">
-                                            <thead>
-                                                <tr>
-                                                    <td><h3></h3></td>
-                                                    <td><h3></h3></td>
-                                                    <td><h3></h3></td>
-                                                    <td><h3>Product</h3></td>
-                                                    <td><h3>Price</h3></td>
-                                                    <td><h3>Quantity</h3></td>
-                                                    <td><h3>Total</h3></td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ( Cart::instance('saveForLater')->content() as $item )
-                                                <tr>
-                                                    <td><h4><form action="{{ route('saveForLater.destroy', $item->rowId) }}" method="POST">
-                                                        {{ csrf_field() }}
-                                                        {{ method_field('DELETE') }}
-                                                        <button type="submit">Remove</button>
-                                                    </form></h4></td>
-                                                    <td><h4><form action="{{ route('saveForLater.switchToCart', $item->rowId) }}" method="POST">
-                                                        {{ csrf_field() }}
-                                                        <button type="submit">Move To Cart</button>
-                                                    </form></h4></td>
-                                                    <td><h4><a href="{{ route('shop.show', $item->model->name) }}"><img class="img-fluid" src="images/wedding.jpg" alt="image"></a></h4></td>
-                                                    <td><h4><a href="{{ route('shop.show', $item->model->name) }}"><h4>{{ $item->model->name }}</a></h4></td>
-                                                    <td><h4>{{ $item->model->presentPrice() }}</h4></td>
-                                                    <td><h3></h3></td>
-                                                    <td><h3></h3></td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    @else
-                                    <h3>You have no items saved for later.</h3>
-                                    @endif
-                                </section>
+            </aside>
+            <aside class="col-lg-3">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group"> <label>Have coupon?</label>
+                                <div class="input-group"> <input type="text" class="form-control coupon" name="" placeholder="Coupon code"> <span class="input-group-append"> <button class="btn btn-primary btn-apply coupon">Apply</button> </span> </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <dl class="dlist-align">
+                            <dt>Total price:</dt>
+                            <dd class="text-right ml-3">$69.97</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>Discount:</dt>
+                            <dd class="text-right text-danger ml-3">- $10.00</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>Total:</dt>
+                            <dd class="text-right text-dark b ml-3"><strong>$59.97</strong></dd>
+                        </dl>
+                        <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a href="#" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+                    </div>
+                </div>
+            </aside>
+            <aside class="col-lg-9">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-shopping-cart">
+                            <thead class="text-muted">
+                                <tr class="small text-uppercase">
+                                    <th scope="col">Product</th>
+                                    <th scope="col" width="120">Quantity</th>
+                                    <th scope="col" width="120">Price</th>
+                                    <th scope="col" class="text-right d-none d-md-block" width="200"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside"><img src="https://i.imgur.com/1eq5kmC.png" class="img-sm"></div>
+                                            <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Tshirt with round nect</a>
+                                                <p class="text-muted small">SIZE: L <br> Brand: MAXTRA</p>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    @foreach (Cart::content() as $item)
+                                    <td> <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
+                                            @for ($i = 1; $i < 5 + 1 ; $i++)
+                                                <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                            @endfor
+                                        </select></td>
+                                    @endforeach
+                                    <td>
+                                        <div class="price-wrap"> <var class="price">$10.00</var> <small class="text-muted"> $9.20 each </small> </div>
+                                    </td>
+                                    <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light" data-abc="true"> Remove</a> </td>
+                                </tr>
+                                {{-- <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside"><img src="https://i.imgur.com/hqiAldf.jpg" class="img-sm"></div>
+                                            <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Flower Formal T-shirt</a>
+                                                <p class="text-muted small">SIZE: L <br> Brand: ADDA </p>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td> <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select> </td>
+                                    <td>
+                                        <div class="price-wrap"> <var class="price">$15</var> <small class="text-muted"> $12 each </small> </div>
+                                    </td>
+                                    <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
+                                </tr> --}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+
+    @endguest
 
 
 
-@endguest
 
+</body>
+<script>
+    (function(){
+        const classname = document.querySelectorAll('.quantity')
+        Array.from(classname).forEach(function(element) {
+            element.addEventListener('change', function() {
+                alert('hello');
+                const id = element.getAttribute('data-id')
+                const productQuantity = element.getAttribute('data-productQuantity')
+                axios.patch(`/cart/${id}`, {
+                    quantity: this.value,
+                    productQuantity: productQuantity
+                })
+                .then(function (response) {
+                    // console.log(response);
+                    window.location.href = '{{ route('cart.index') }}'
+                })
+                .catch(function (error) {
+                    // console.log(error);
+                    window.location.href = '{{ route('cart.index') }}'
+                });
+            })
+        })
+    })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
 
-{{-- <td>SubTotal {{ presentPrice(Cart::subtotal()) }} ..
-    Tax {{ presentPrice(Cart::tax()) }} ..
-    Total With 20% VAT {{ presentPrice(Cart::total()) }}
-</td> --}}
-
-
-@endsection

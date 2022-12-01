@@ -37,3 +37,6 @@ document.querySelector('.contact button').addEventListener('mouseover', () => {
 document.querySelector('.contact button').addEventListener('mouseout', () => {
     document.querySelector('.contact button span').style.animationName = 'buttonEffectRemoval'
 })
+
+require('./bootstrap');
+window.Vue = require('vue');
