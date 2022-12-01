@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="row mb-4">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email">
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="row mb-4">
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="password" name="password" required autocomplete="new-password">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="new-password">
 
                     @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col">
+                    <div class="col mb-5">
                         <button type="submit" class="btn btn-primary">
                             {{ __('Register') }}
                         </button>
