@@ -14,39 +14,57 @@
         </div>
     </section>
 
+    <section id="list-banner" class="container-flex">
+        <div class="col">
+            <a class="btn btn-link" href="{{route('myOrders')}}">My Orders</a>-->
+        </div>
+        <div class="col">
+            <a class="btn btn-link" href="{{route('home')}}">My Profile</a>
+        </div>
+    </section>
 
-    <section class="container-flex row">
+    <section id="update-details" class="container-sm col">
 
-        <section id="profile-orders" class=" container-sm card col col-4 ">
-            <div class="card-head">
-                <h6 class="title-text">My Orders</h6>
-            </div>
-            <div class="card-body">
-                <h6 class="mb-1"> Your Recent orders</h6>
+        <div class="card">
+            <form method="POST" action="{{ route('register') }}">
+                <!-- rework for update details -->
+                @csrf
+                <div class="row mb-4">
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
 
-                <img class="order-img" src="images\img.1.jpg" />
-                <p> Sterling Silver Ring</p>
+                <div class="row mb-4">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
 
-            </div>
+                <div class="row mb-4">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="new-password">
+                </div>
 
-        </section>
+                <div class="row mb-4">
+                    <input id="password-confirm" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">
+                </div>
 
-
-        <section id="account-details" class="container-sm card col col-4">
-            <div class="card-head">
-                <h6 class="title-text">........My Details........ </h6>
-            </div>
-            <div class="card-body">
-                <p> this is a test for the box area
-                    of the account details section of the webpage
-                </p>
-            </div>
-        </section>
-
-
-
+                <div class="row">
+                    <div class="col mb-5">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('Register') }}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    </section>
 </body>
-
-
-
 @endsection
