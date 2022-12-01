@@ -11,10 +11,10 @@
 
     <section id="list-banner" class="container-flex">
         <div class="col">
-            <a class="btn btn-link" href="{{ route('myOrders') }}">My Orders</a>
+            <a class="btn btn-link" href="{{ url('/myOrders') }}">My Orders</a>
         </div>
         <div class="col">
-            <a class="btn btn-link" href="{{ route('myProfile') }}">My Profile</a>
+            <a class="btn btn-link" href="{{ url('/myProfile') }}">My Profile</a>
         </div>
     </section>
 
