@@ -1,8 +1,8 @@
 .Product-info ul{
-    margin: 1rem 0;
+    margin:  0;
     font-size: 0.9rem;
 }
-.Product-info ul li{
+.Product-info li{
     margin: 0;
     list-style: none;
     background: url(images/checked.png) left center no-repeat;

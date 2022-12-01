@@ -168,24 +168,19 @@
                 <h6>Home / NECKLACE</h6>
                 <h3 class="py-4">Rhinestone Decor Chain Necklace</h3>
                 <h2>£249.00</h2>
-                    <div class = "product-size">
-                        <p class = "Size">Size:
-                            <button type = "button" class = "btn">
-                                One-size <i class=""></i>
-                        </p>
-                    </div>
+                
                 <input type="number" value="1">
                 <button class= "buy-btn">Add To Cart</button>
                 <h4 class= "mt-5 mb-5">Product Details</h4>
                 <div class= "Product-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem iste sapiente laudantium totam aliquid accusamus delectus quae at. Minima perferendis blanditiis aut at hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, itaque nulla magnam reprehenderit sunt esse!</p>
-                    <ul>
-                        <li>Color: <span>Silver</span></li>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem iste sapiente laudantium totam aliquid accusamus delectus quae at. Minima perferendis blanditiis aut at hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, itaque nulla magnam reprehenderit sunt esse!
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod suscipit, ipsa sunt quos numquam natus.
+                    </p>
                         <li>Available: <span>In stock</span></li>
                         <li>Category: <span>Jewellery</span></li>
                         <li>Shipping Area: <span>All over the world</span></li>
                         <li>Shipping fee: <span>Free</span></li> 
-                     </ul>
+                     
                         
                     
                 </div>
