@@ -286,8 +286,6 @@
 
     }
 
-
-
     .StripeElement--invalid {
     border-color: #fa755a;
     }
@@ -299,6 +297,11 @@
     #card-errors {
     color: #fa755a;
     }
+
+    #email #name #address #city #province #postalcode #phone{
+        border: 1px solid lightgrey;
+    }
+
 </style>
 <script src="https://js.stripe.com/v3/"></script>
 @section('content')
