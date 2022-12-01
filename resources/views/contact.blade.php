@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{ asset('aboutus.css') }}">
     <link rel="stylesheet" href="{{ asset('app.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
         <!-- Scripts -->
@@ -30,16 +31,16 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/#rings') }}">RINGS</a>
+                    <a class="nav-link" href="{{ url('/shop-ring') }}">RINGS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/#necklaces') }}">NECKLACES</a>
+                    <a class="nav-link" href="{{ url('/shop-necklace') }}">NECKLACES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/#bracelets') }}">BRACELETS</a>
+                    <a class="nav-link" href="{{ url('/shop-bracelet') }}">BRACELETS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/#earrings') }}">EARRINGS</a>
+                    <a class="nav-link" href="{{ url('/shop-earring') }}">EARRINGS</a>
                 </li>
                 @guest
                     @if (Route::has('login'))
