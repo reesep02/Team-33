@@ -18,16 +18,16 @@
     </div>
 
     <div class="section two">
-    <button>
-        <i class="gender"></i>
-        <img src="{{ asset('images/pexels-milan-4639591.jpg') }}" alt="genders">
-        <h1>HIM</h1>
-     </button>
-    <button>
-        <i class="gender"></i>
-        <img src="{{ asset('images/pexels-milan-4639591.jpg') }}" alt="genders">
-        <h1>HER</h1>
-      </button>
+        <button>
+            <i class="gender"></i>
+            <img src="{{ asset('images/pexels-milan-4639591.jpg') }}" alt="genders">
+            <h1>HIM</h1>
+        </button>
+        <button>
+            <i class="gender"></i>
+            <img src="{{ asset('images/pexels-milan-4639591.jpg') }}" alt="genders">
+            <h1>HER</h1>
+        </button>
     </div>
 
     <div class="section three" id="rings">
@@ -81,4 +81,3 @@
 
 
 @endsection
-
