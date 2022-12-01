@@ -165,24 +165,26 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-12">
-                <h6>Home / NECKLACE</h6>
-                <h3 class="py-4">Rhinestone Decor Chain Necklace</h3>
-                <h2>£249.00</h2>
-                
+                <h6><a href="{{url('/')}}">Home</a> / <a href="{{url('/shop-'.$product->type)}}">{{ucfirst($product->type)}}</a></h6>
+                <h3 class="py-4">{{$product->name}}</h3>
+                <h2>{{$product->presentPrice()}}</h2>
+
                 <input type="number" value="1">
-                <button class= "buy-btn">Add To Cart</button>
-                <h4 class= "mt-5 mb-5">Product Details</h4>
+                <form action="{{ route('cart.store', $product) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" class="buy-btn">Add to Cart</button>
+                </form>
+                <h4 class= "mt-5 mb-5">{{$product->details}}</h4>
                 <div class= "Product-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem iste sapiente laudantium totam aliquid accusamus delectus quae at. Minima perferendis blanditiis aut at hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, itaque nulla magnam reprehenderit sunt esse!
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod suscipit, ipsa sunt quos numquam natus.
+                    <p>{!! $product->description !!}
                     </p>
                         <li>Available: <span>In stock</span></li>
-                        <li>Category: <span>Jewellery</span></li>
+                        <li>Category: <span>{{ucfirst($product->type)}}</span></li>
                         <li>Shipping Area: <span>All over the world</span></li>
-                        <li>Shipping fee: <span>Free</span></li> 
-                     
-                        
-                    
+                        <li>Shipping fee: <span>Free</span></li>
+
+
+
                 </div>
             </div>
         </div>

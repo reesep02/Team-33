@@ -26,16 +26,16 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/#rings') }}">RINGS</a>
+                    <a class="nav-link" href="{{ url('/shop-ring') }}">RINGS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/#necklaces') }}">NECKLACES</a>
+                    <a class="nav-link" href="{{ url('/shop-necklace') }}">NECKLACES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/#bracelets') }}">BRACELETS</a>
+                    <a class="nav-link" href="{{ url('/shop-bracelet') }}">BRACELETS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/#earrings') }}">EARRINGS</a>
+                    <a class="nav-link" href="{{ url('/shop-earring') }}">EARRINGS</a>
                 </li>
                 @guest
                     @if (Route::has('login'))
@@ -87,7 +87,7 @@
     <h1>Login to view cart<h1>
     @else
 
-    <div style="margin-top: 10rem; margin-bottom: 2rem" class="container-fluid">  <!-- Delete this margin-top when navbar is fixed !-->
+    <div style="margin-top: 5rem; margin-bottom: 2rem" class="container-fluid">  <!-- Delete this margin-top when navbar is fixed !-->
         <div class="row">
             <aside class="col-lg-9">
                 @if (session()->has('success_message'))
