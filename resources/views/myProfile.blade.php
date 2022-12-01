@@ -16,24 +16,25 @@
 
 
     <section class="container-flex row">
-        <section class="col col-2"></section>
 
         <section id="profile-orders" class=" container-sm card col col-4 ">
             <div class="card-head">
                 <h6 class="title-text">My Orders</h6>
             </div>
             <div class="card-body">
-                <p> this is a test for the box area
-                    of the profile orders section of the webpage
-                </p>
+                <h6 class="mb-1"> Your Recent orders</h6>
+
+                <img class="order-img" src="images\img.1.jpg" />
+                <p> Sterling Silver Ring</p>
+
             </div>
+
         </section>
 
-        <section class="col col-1"></section>
 
         <section id="account-details" class="container-sm card col col-4">
             <div class="card-head">
-                <h6 class="title-text">My Details</h6>
+                <h6 class="title-text">........My Details........ </h6>
             </div>
             <div class="card-body">
                 <p> this is a test for the box area
@@ -42,7 +43,6 @@
             </div>
         </section>
 
-        <section class="col col-2"></section>
 
 
 </body>
