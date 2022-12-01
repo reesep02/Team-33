@@ -46,7 +46,7 @@
             outline: none
         }
         .buy-btn{
-            border: 1.5px solid #000000;
+            border: 1.5px solid #ffffff;
             border-radius: 25px;
             text-align: center;
             padding: 0.45rem 0.8rem;
@@ -56,53 +56,10 @@
             font-weight: 700;
         }
         .buy-btn{
-            background: orange;
+            background: rgb(8, 0, 255);
+            color:rgb(255, 253, 253);
             opacity: 1;
             transition: 0.3s all;
-        }
-        .product-size{
-            margin: 1rem 0;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-
-        .product-size .btn{
-            text-align: center;
-            margin-right: 0.2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            border-width: 1.5px;
-            border-style: solid;
-            border-color: rgb(0, 0, 0);
-            border-image: initial;
-            border-radius: 25px;
-            padding: 0.45rem 0.8rem;
-            outline: 0px;
-        }
-        .product-size .btn{
-            cursor: pointer;
-            color:  black;
-            background: rgb(255, 253, 253);
-        }
-        .product-size .btn:hover{
-            opacity: 0.9;
-        }
-        .Product-info ul{
-            margin: 1rem 0;
-            font-size: 0.9rem;
-        }
-        .Product-info ul li{
-            margin: 0;
-            list-style: none;
-            background: url(images/checked.png) left center no-repeat;
-            background-size: 18px;
-            padding-left: 1.7rem;
-            margin: 0.4rem 0;
-            font-weight: 600;
-            opacity: 0.9;
-        }
-        .Product-info ul li span{
-            font-weight: 400;
         }
 
 
@@ -209,25 +166,25 @@
             </div>
             <div class="col-lg-6 col-md-12 col-12">
                 <h6>Home / NECKLACE</h6>
-                <h3 class="py-4">Rhinestone Decor Chain Necklace</h3>
+                <h3 class="py-4">12MM Rhinestone Decor Chain Necklace</h3>
                 <h2>£249.00</h2>
-                    <div class = "product-size">
-                        <p class = "Size">Size:
-                            <button type = "button" class = "btn">
-                                One-size <i class=""></i>
-                        </p>
-                    </div>
+                    <select class ="my-3">
+                        <option>Select Length</option>
+                        <option>12MM</option>
+                        <option>14MM</option>
+                        <option>16MM</option>
+                    </select>
                 <input type="number" value="1">
                 <button class= "buy-btn">Add To Cart</button>
-                <h4 class= "mt-5 mb-5">Product Details</h4>
+                <h4 class= "mt-4 mb-4">Product Details</h4>
                 <div class= "Product-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem iste sapiente laudantium totam aliquid accusamus delectus quae at. Minima perferendis blanditiis aut at hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, itaque nulla magnam reprehenderit sunt esse!</p>
+                    <p>This luxurious Jewelz 12MM Rhinestone Décor Chain Necklace is made of solid white gold and is 12mm thick.This necklace is manufactured in the highest quality to Jewelz standards. </p>
                     <ul>
-                        <li>Color: <span>Silver</span></li>
-                        <li>Available: <span>In stock</span></li>
-                        <li>Category: <span>Jewellery</span></li>
-                        <li>Shipping Area: <span>All over the world</span></li>
-                        <li>Shipping fee: <span>Free</span></li> 
+                      <li>Color: <span>Solid white gold</span></li>
+                      <li>Available: <span>In stock</span></li>
+                      <li>Category: <span>Jewellery</span></li>
+                      <li>Shipping Area: <span>All over the world</span></li>
+                      <li>Shipping fee: <span>Free</span></li> 
                      </ul>
                         
                     

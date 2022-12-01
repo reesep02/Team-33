@@ -1,88 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
-
-
-        .small-img-group{
-            display: flex;
-            justify-content: space-between;
-        }
-        .small-img-col{
-            flex-basis: 33%;
-            cursor: pointer;
-        }
-        .sproduct select{
-            display:block;
-            padding: 5px 10px;
-        }
-        .sproduct input{
-            width: 50px;
-            height: 40px;
-            padding-left: 10px;
-            font-size: 16px;
-            margin-right: 10px
-        }
-        .sproduct input:focus{
-            outline: none
-        }
-        .buy-btn{
-            border: 1.5px solid #000000;
-            border-radius: 25px;
-            text-align: center;
-            padding: 0.45rem 0.8rem;
-            outline: 0;
-            margin-right: 0.2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        .buy-btn{
-            background: orange;
-            opacity: 1;
-            transition: 0.3s all;
-        }
-        .product-size{
-            margin: 1rem 0;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-
-        .product-size .btn{
-            text-align: center;
-            margin-right: 0.2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            border-width: 1.5px;
-            border-style: solid;
-            border-color: rgb(0, 0, 0);
-            border-image: initial;
-            border-radius: 25px;
-            padding: 0.45rem 0.8rem;
-            outline: 0px;
-        }
-        .product-size .btn{
-            cursor: pointer;
-            color:  black;
-            background: rgb(255, 253, 253);
-        }
-        .product-size .btn:hover{
-            opacity: 0.9;
-        }
-        .Product-info ul{
-            margin: 1rem 0;
-            font-size: 0.9rem;
-        }
-        .Product-info ul li{
-            margin: 0;
-            list-style: none;
-            background: url(images/checked.png) left center no-repeat;
-            background-size: 18px;
-            padding-left: 1.7rem;
-            margin: 0.4rem 0;
-            font-weight: 600;
-            opacity: 0.9;
-        }
-        .Product-info ul li span{
-            font-weight: 400;
-        }
-
-
+.Product-info ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.Product-info ul li{
+    margin: 0;
+    list-style: none;
+    background: url(images/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin-right: 0.2rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.Product-info ul li span{
+    font-weight: 400;
+}
 
     
