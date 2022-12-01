@@ -20,8 +20,8 @@
     </section>
 
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="card">
+        <div class="row">
+            <div class="card mb-3">
                 <div class="card-header">
                     <div class="order-header-items">
                         <div>Order Placed: <p> 26th Nov 2022</p>
@@ -42,7 +42,7 @@
                     <div class="order-product-item">
                         <div><img src="images\img.1.jpg" class="order-img">
                             <p> Sterling Silver bracelet</p>
-                            <div>£300</div>
+                            <div>Item cost: £300</div>
                             <div>Quantity: 1</div>
                         </div>
                     </div>
