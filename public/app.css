@@ -665,3 +665,8 @@ input[type] {
 .title-text {
     font-weight:600;
 }
+
+.cart-info-number {
+    color: #f7c02b;
+    size: 16px;
+}
