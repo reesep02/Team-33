@@ -50,9 +50,10 @@ Route::get('empty', function () {
     Cart::instance('saveForLater')->destroy();
 });
 
-Route::get('/checkout', function () {
-    return view('checkout');
-});
+Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout.index');
+
+Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('strip.session');
+Route::get('/success', 'App\Http\Controllers\StripeController@success')->name('strip.success');
 
 Route::get('/about', function () {
     return view('about');

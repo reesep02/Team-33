@@ -6,15 +6,15 @@
     <link rel="icon" type="image/png" href="{{ asset('favicon.jpg') }}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
 
     <title>{{ config('app.name', 'Jewelz') }}</title>
 
     <!-- Fonts -->
      <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> 
-    
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -66,7 +66,7 @@
 
 
     </style>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Scripts -->
     {{-- <script src="{{asset('app.js')}}"></script> --}}
@@ -166,25 +166,25 @@
             </div>
             <div class="col-lg-6 col-md-12 col-12">
                 <h6>Home / NECKLACE</h6>
-                <h3 class="py-4">12MM Rhinestone Decor Chain Necklace</h3>
+                <h3 class="py-4">Rhinestone Decor Chain Necklace</h3>
                 <h2>£249.00</h2>
-                    <select class ="my-3">
-                        <option>Select Length</option>
-                        <option>12MM</option>
-                        <option>14MM</option>
-                        <option>16MM</option>
-                    </select>
+                    <div class = "product-size">
+                        <p class = "Size">Size:
+                            <button type = "button" class = "btn">
+                                One-size <i class=""></i>
+                        </p>
+                    </div>
                 <input type="number" value="1">
                 <button class= "buy-btn">Add To Cart</button>
-                <h4 class= "mt-4 mb-4">Product Details</h4>
+                <h4 class= "mt-5 mb-5">Product Details</h4>
                 <div class= "Product-info">
-                    <p>This luxurious Jewelz 12MM Rhinestone Décor Chain Necklace is made of solid white gold and is 12mm thick.This necklace is manufactured in the highest quality to Jewelz standards. </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem iste sapiente laudantium totam aliquid accusamus delectus quae at. Minima perferendis blanditiis aut at hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, itaque nulla magnam reprehenderit sunt esse!</p>
                     <ul>
-                      <li>Color: <span>Solid white gold</span></li>
-                      <li>Available: <span>In stock</span></li>
-                      <li>Category: <span>Jewellery</span></li>
-                      <li>Shipping Area: <span>All over the world</span></li>
-                      <li>Shipping fee: <span>Free</span></li> 
+                        <li>Color: <span>Silver</span></li>
+                        <li>Available: <span>In stock</span></li>
+                        <li>Category: <span>Jewellery</span></li>
+                        <li>Shipping Area: <span>All over the world</span></li>
+                        <li>Shipping fee: <span>Free</span></li> 
                      </ul>
                         
                     
@@ -201,7 +201,7 @@
 
       var MainImg = document.getElementById('MainImg');
       var smallimg = document.getElementsByClassName('small-img')
-    
+
      smallimg[0].onclick = function(){
         MainImg.src = smallimg[0].src;
      }

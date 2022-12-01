@@ -6,7 +6,7 @@
     margin: 0 -12px;
     padding-left: 50px;
     padding-right: 50px;
-  }
+}
 
 .col-25{
     -ms-flex: 25%;
@@ -17,129 +17,135 @@
 .col-50{
     -ms-flex: 50%;
     flex: 50%;
-  }
-  
-  .col-75{
+}
+
+.col-75{
     -ms-flex: 75%;
     flex: 75%;
     padding: 100px;
-  }
+}
 
-  input[type=text]{
+input[type=text]{
     width: 100%;
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid rgb(132, 8, 8);
-  }
-  
-  .container{
+}
+
+.container{
     background-color: #f2f2f2;
     padding: 5px 20px 15px 20px;
     border-radius: 5px;
     border: 3px solid #e2a600;
-  }
+}
 
-  #mainheader{
+#mainheader{
     padding-top: 20px;
     text-align: left;
-  }
+}
 
-  #billingheader{
+#billingheader{
     padding-top: 30px;
     text-align: left;
 
-  }
+}
 
-  #namelabel{
+#namelabel{
     padding-top: 20px;
     text-align: left;
-  }
+}
 
-  #emaillabel{
+#emaillabel{
     text-align: left;
-  }
+}
 
-  #addresslabel{
+#addresslabel{
     padding-top: 20px;
     text-align: left;
-  }
+}
 
-  #citylabel{
+#citylabel{
     text-align: left;
-  }
+}
 
-  #paymentheader{
+#paymentheader{
     padding-top: 30px;
     text-align: left;
-  }
+}
 
-  #cardnamelabel{
+#cardnamelabel{
+    width: 100%;
     text-align: left;
-  }
+}
 
-  #cardnolabel{
+#cardnolabel{
+    width: 100%;
     text-align: left;
-  }
+}
 
-  #email{
+#expmonthlabel{
+    width: 100%;
+    text-align: left;
+}
+
+#email{
     padding: 10px;
     border-radius: 5px;
     border: 1px solid lightgrey;
-  }
+}
 
-  #fullname{
+#fullname{
     border: 1px solid lightgrey;
-  }
-  
-  #address{
-    border: 1px solid lightgrey;
-  }
+}
 
-  #city{
+#address{
     border: 1px solid lightgrey;
-  }
+}
 
-  #county{
+#city{
     border: 1px solid lightgrey;
-  }
+}
 
-  #postcode{
+#county{
     border: 1px solid lightgrey;
-  }
+}
 
-  #cardname{
+#postcode{
     border: 1px solid lightgrey;
-  }
+}
 
-  #cardno{
+#cardname{
     border: 1px solid lightgrey;
-  }
+}
 
-  #expmonth{
+#cardno{
     border: 1px solid lightgrey;
-  }
+}
 
-  #expyear{
+#expmonth{
     border: 1px solid lightgrey;
-  }
+}
 
-  #cvv{
+#expyear{
     border: 1px solid lightgrey;
-  }
+}
 
-  label{
+#cvv{
+    border: 1px solid lightgrey;
+}
+
+label{
     margin-bottom: 10px;
     display: block;
-  }
-  
-  .icon-container{
+}
+
+.icon-container{
     margin-bottom: 20px;
     padding: 5px;
     font-size: 25px;
-  }
-  
-  .btn{
+}
+
+.btn{
     color: #e2a600;
     padding: 12px;
     margin: 10px 0;
@@ -148,20 +154,24 @@
     border-radius: 3px;
     cursor: pointer;
     font-size: 17px;
-  }
+}
 
-  #checkoutbtn:hover{
+#checkoutbtn:hover{
     background-color: #cc9600;
-  }
+}
 
-  #checkoutbtn{
+#checkoutbtn{
     background-color: #e2a600;
-  }
-  
-  span.price{
-    float: right;
+}
+
+span.price{
+    width: 100%;
+    text-align: right;
+    float: left;
     color: black;
-  }
+    position: relative;
+    bottom: 25px;
+}
 
 
 
@@ -169,7 +179,3 @@
 
 
 
-  
-
-
-  

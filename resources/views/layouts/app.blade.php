@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -23,7 +23,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
-<header>
+<header class="app-navbar-header">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -100,7 +100,7 @@
  </div>
 
 
- <footer class="site-footer sticky-bottom footer mt-auto py-3 bg-dark">
+ <footer class="site-footer sticky-bottom footer mt-auto py-3 bg-dark app-footer-footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6">
