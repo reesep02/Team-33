@@ -114,7 +114,7 @@
 
   <div class="atitle">
     <p></p>
-    <h1> Get in touch</h1>
+    <h1 id="contact"> Get in touch</h1>
 
   </div>
   <div class="wrap">
@@ -137,7 +137,7 @@
   </div>
   <div class="container1">
         <form>
-            <h1 id="contact">Contact Us Below</h1>
+            <h1>Contact Us Below</h1>
             <input type="text" id="firstName" placeholder="First Name" required>
             <input type="text" id="lastName" placeholder="Last Name" required>
             <input type="email" id="email" placeholder="Email" required>
