@@ -299,7 +299,7 @@
     }
 
     #email #name #address #city #province #postalcode #phone{
-        border: 1px solid lightgrey;
+        border: 1px solid #ebb000;
     }
 
 </style>
