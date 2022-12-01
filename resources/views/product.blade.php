@@ -150,11 +150,11 @@
     <section class="container sproduct my-5 pt-5">
         <div class="row mt-5">
             <div class="col-lg-5 col-md-12 col-12">
-                <img class="img-fluid w-100 pb-1"src="{{asset ('images/img.1.jpg') }}" id="MainImg" alt="">
+                <img class="img-fluid w-100 pb-1"src="{{asset('storage/'.$product->image)}}" id="MainImg" alt="{{$product->image}}">
 
                 <div class="small-img-group">
                     <div class="small-img-col">
-                        <img src="{{asset ('images/img.1.jpg') }}" width="100%" class="small-img" alt="">
+                        <img src="{{asset('storage/'.$product->image)}}" width="100%" class="small-img" alt="">
                     </div>
                     <div class="small-img-col">
                         <img src="{{asset ('images/img.2.jpg') }}" width="100%" class="small-img" alt="">
