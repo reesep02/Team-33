@@ -73,6 +73,7 @@
                                     </table>
                                 </section>
                                     <h3><a href="{{url('/')}}">Continue Shopping</a><h3>
+                                    <h3><a href="{{route('checkout.index')}}">CheckOut</a></h3>
                                  @else
                                  <h3>No items in Cart!</h3>
                                  <h3><a href="{{url('/')}}">Continue Shopping</a><h3>
