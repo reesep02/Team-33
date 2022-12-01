@@ -11,21 +11,7 @@
         <p class="t2">EXPRESS YOURSELF</p>
         </p>
         <p class="t2">THE FINEST SUBSTAINABLE JEWELLERY</p>
-        <p class="t3">....</p>
-    </div>
-    <div id="section1">
-        <img src="{{ asset('images/pexels-milan-4639591.jpg') }}" alt="express">
-    </div>
-
-    <div class="section two">
-        <button>
-            <h3 class="gender">HIM</h3>
-            <img src="{{ asset('images/pexels-milan-4639591.jpg') }}" alt="genders">
-        </button>
-        <button>
-            <h3 class="gender">HER</h3>
-            <img src="{{ asset('images/pexels-milan-4639591.jpg') }}" alt="genders">
-        </button>
+        <p class="t3">CRAFTED BY OUR VERY OWN JEWELERS</p>
     </div>
 
     <div class="section three" id="rings">

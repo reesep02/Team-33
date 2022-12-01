@@ -172,11 +172,6 @@ main {
     text-align: center;
 }
 
-h3 {
-    font-family: "Roboto Condensed";
-    font-weight: 100;
-}
-
 .section {
     padding: 50px;
     /*padding top needed for navbar links */
@@ -195,7 +190,7 @@ h3 {
 .t0:nth-of-type(odd),
 .t1:nth-of-type(odd),
 .t2:nth-of-type(odd) {
-    background: linear-gradient(to right, #cda330, #73622a);
+    background: linear-gradient(to right, #908364, #d0a002);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -204,7 +199,7 @@ h3 {
 .t0:nth-of-type(even),
 .t1:nth-of-type(even),
 .t2:nth-of-type(even) {
-    background: linear-gradient(to right, #762fc4, black 90%);
+    background: linear-gradient(to right, #ababab, rgb(97, 74, 0) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -232,8 +227,8 @@ h3 {
 }
 
 .t3 {
-    font-size: 1.2rem;
-    color: #676767;
+    font-size: 1.0rem;
+    color: #cdcdcd;
 }
 
 .t4 {
@@ -254,12 +249,20 @@ h3 {
     border-bottom: 2px solid #73622a;
 }
 
+.one {
+    background: url("images/pexels-antoni-shkraba-7166993.jpg");
+    background-size: 100vw;
+    background-attachment: scroll;
+    background-position: center;
+    box-shadow: inset 0 0 0 1000px rgba(55, 55, 55, 0.435);
+}
+
 .one .t2:first-child {
     margin-top: 200px;
     padding-bottom: 0;
     font-size: 3.5rem;
-    font-weight: 400;
-    -webkit-text-fill-color: black;
+    font-weight: 200;
+    -webkit-text-fill-color: #cdcdcd;
 }
 
 .one .t0:first-child {
@@ -284,7 +287,7 @@ h3 {
 
 .one .t3 {
     font-size: 2.5rem;
-    font-weight: 400;
+    font-weight: 100;
     margin-bottom: 20vh;
 }
 
@@ -382,7 +385,6 @@ img[alt="express"] {
 
 #section3 {
     background: url("images/pexels-arjun-knack-9620789.jpg");
-    background-size: 100vw;
     background-attachment: fixed;
     background-position-y: 50vh;
     background-position: center;
@@ -637,7 +639,13 @@ img[alt="express"] {
 }
 
 
-/* ....................... SITE-WIDE INTERACTIVE ELEMENTS ............................*/
+/* ....................... SITEWIDE INTERACTIVE ELEMENTS ............................*/
+
+
+/* This was implemented by Josh, feel free to move this elsewhere if you feel it doesn't belong in here just let me know where you move it to please, otherwise just delete this comment*/
+
+
+/* This is utilising the bootstrap elements*/
 
 .btn-primary {
     background-color: #cc9c0c;
@@ -649,24 +657,12 @@ img[alt="express"] {
     border-color: #e2a600;
 }
 
-.btn {
+.btn-link {
     color: #ebb000;
-}
-
-.btn-bar:hover {
-    text-decoration-color:#212529;
-    text-decoration: underline;
-    text-underline-position: below;
-
-}
-
-.btn-primary {
-    background-color: #212529;
 }
 
 input[type] {
     border: 3px;
-    border-radius: 0px;
     background-color: #f3f3f3;
 }
 
@@ -701,7 +697,8 @@ input[type] {
     color: #f7c02b;
     size: 16px;
 }
-#cart-info-number{
+
+#cart-info-number {
     color: #f7c02b;
     size: 16px;
 }
