@@ -1,34 +1,8 @@
-#profile-banner {
-    background-color: #f7c02b;
-}
-
-.card-head {
-    border-radius: 0px;
-    border-width: 0px;
-    border-bottom-width: 2px;
-    border-style: solid;
-    border-color: grey;
-    padding: 0.5rem;
-}
-
-.card-body {
-    font-size: inherit;
-}
-
-.card {
-    width: unset;
-    border-radius: 0px;
-    border-width: 0px;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    background-color: #f8f7ee;
+#banner {
+    background: linear-gradient(to right, #d8ac31, #836f2f);
 }
 
 .order-img {
     width: 70px;
     height: 70px;
-}
-
-.container-sm {
-    min-width: 35rem;
 }

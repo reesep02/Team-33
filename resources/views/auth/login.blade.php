@@ -8,7 +8,7 @@
             <div class="container-fluid  my-5">
                 <h1 class="row mb-3 justify-content-center title-text"> LOGIN </h1>
                 <h2 class="row mb-3 justify-content-center">Returning customer? welcome back.</h2>
-                <h6>New around here?<a class="btn btn-link" href="{{ route('register')}}">Click here to sign up!</a></h6> <!-- be sure to add the hyperlink for the sign up page here-->
+                <h6>New around here?<a class="btn btn-bar" href="{{ route('register')}}">Click here to sign up!</a></h6> <!-- be sure to add the hyperlink for the sign up page here-->
             </div>
 
             <div class="container-fluid">
@@ -57,7 +57,7 @@
                             </button>
 
                             @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                            <a class="btn btn-bar" href="{{ route('password.request') }}">
                                 {{ __('Forgot Your Password?') }}
                             </a>
                             @endif

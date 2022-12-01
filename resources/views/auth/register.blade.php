@@ -6,7 +6,7 @@
     <div class="container mt-5 pt-3">
         <h1 class="title-text">REGISTER</h1>
         <h2>Welcome to the crew!</h2> <!-- This sounds awful but I need it as placeholder text-->
-        <h6>Already have an account? <a class="btn btn-link" href="{{ Route('login') }}">Login here!</a></h6>
+        <h6>Already have an account? <a class="btn btn-bar" href="{{ Route('login') }}">Login here!</a></h6>
     </div>
     <div class="container-sm mt-5">
         <div class="col">
