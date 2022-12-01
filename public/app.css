@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 /* ..................... PAGE FONTS AND STYLING .....................*/
 
 * {
@@ -13,6 +14,8 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+
 /* ..................... HEADER AND NAVIGATION STYLING .....................*/
 
 header {
@@ -130,7 +133,6 @@ nav button span {
     background: #73622a;
     height: 100%;
     z-index: -1;
-
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
@@ -162,10 +164,17 @@ nav button:hover {
         padding-bottom: 0px;
     }
 }
+
+
 /* ....................... HOMEPAGE BODY STYLING ............................*/
 
 main {
     text-align: center;
+}
+
+h3 {
+    font-family: "Roboto Condensed";
+    font-weight: 100;
 }
 
 .section {
@@ -278,9 +287,11 @@ main {
     font-weight: 400;
     margin-bottom: 20vh;
 }
+
+
 /* ....................... HOMEPAGE IMAGES ............................*/
 
-main > img {
+main>img {
     display: section;
     margin: 60px auto;
 }
@@ -288,6 +299,8 @@ main > img {
 img[alt="express"] {
     width: 90%;
 }
+
+
 /* ............................ GENDER...............................*/
 
 .two {
@@ -308,7 +321,7 @@ img[alt="express"] {
     transition: all 0.5s ease;
 }
 
-.two > button > img {
+.two>button>img {
     width: 50vw;
     visibility: hidden;
 }
@@ -322,13 +335,13 @@ img[alt="express"] {
     transition: all 0.5s ease;
 }
 
-.two > button:first-child {
+.two>button:first-child {
     background: url("images/pexels-amusan-6337270.jpg");
     background-size: 50vw;
     background-repeat: no-repeat;
 }
 
-.two > button:last-child {
+.two>button:last-child {
     background: url("images/pexels-cottonbro-studio-6467618.jpg");
     background-size: 50vw;
     background-repeat: no-repeat;
@@ -340,20 +353,22 @@ img[alt="express"] {
 }
 
 .two button:first-child:hover {
-    background-color: #a1811584;
+    background-color: #33333384;
 }
 
 .two button:last-child:hover {
-    background-color: #5e27578f;
+    background-color: #33333384;
 }
 
 @media (max-width: 900px) {
-    .two > button:first-child,
-    .two > button:last-child {
+    .two>button:first-child,
+    .two>button:last-child {
         background-size: 65vh;
         background-position: center;
     }
 }
+
+
 /* ....................... HOMEPAGE BODY IMAGES ............................*/
 
 #section3 img[alt="ring"],
@@ -414,6 +429,8 @@ img[alt="express"] {
         background-size: 170vw;
     }
 }
+
+
 /* ....................... HOMEPAGE BORDERS ............................*/
 
 #section3:before,
@@ -448,6 +465,8 @@ img[alt="express"] {
     bottom: 0;
     transform-origin: top right;
 }
+
+
 /* ....................... FOOTER ............................*/
 
 .site-footer {
@@ -617,8 +636,13 @@ img[alt="express"] {
     }
 }
 
+
 /* ....................... SITEWIDE INTERACTIVE ELEMENTS ............................*/
+
+
 /* This was implemented by Josh, feel free to move this elsewhere if you feel it doesn't belong in here just let me know where you move it to please, otherwise just delete this comment*/
+
+
 /* This is utilising the bootstrap elements*/
 
 .btn-primary {
@@ -640,6 +664,7 @@ input[type] {
     background-color: #f3f3f3;
 }
 
+
 /* Shopping Cart */
 
 #cart-container table {
@@ -655,6 +680,7 @@ input[type] {
 #cart-container table thead td {
     background: rgb(249, 227, 103);
 }
+
 #cart-container table img {
     width: 100px;
     height: 80px;
@@ -668,8 +694,12 @@ input[type] {
 .cart-info-number {
     color: #f7c02b;
     size: 16px;
+<<<<<<< Updated upstream
 }
 #cart-info-number{
     color: #f7c02b;
     size: 16px;
 }
+=======
+}
+>>>>>>> Stashed changes

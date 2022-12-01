@@ -19,21 +19,21 @@
 
     <div class="section two">
         <button>
-            <i class="gender"></i>
+            <h3 class="gender">HIM</h3>
             <img src="{{ asset('images/pexels-milan-4639591.jpg') }}" alt="genders">
-            <h1>HIM</h1>
         </button>
         <button>
-            <i class="gender"></i>
+            <h3 class="gender">HER</h3>
             <img src="{{ asset('images/pexels-milan-4639591.jpg') }}" alt="genders">
-            <h1>HER</h1>
         </button>
     </div>
 
     <div class="section three" id="rings">
         <p class="t1">RINGS</p>
         <p class="t2">SOMETHING CATCHY</p>
-        <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute
             irure dolor in reprehenderit in voluptate velit esse.</p>
         <p class="t4">
             <a href="{{ url('/shop-ring') }}">BROWSE</a>
@@ -46,7 +46,9 @@
     <div class="section four" id="necklaces">
         <p class="t1">NECKLACES</p>
         <p class="t2">SOMETHING CATCHY</p>
-        <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute
             irure dolor.</p>
         <p class="t4"><a href="{{ url('/shop-necklace') }}">BROWSE</a></p>
     </div>
@@ -57,7 +59,9 @@
     <div class="section five" id="bracelets">
         <p class="t1">BRACELETS</p>
         <p class="t2">SOMETHING CATCHY</p>
-        <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+        <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo.</p>
         <p class="t4"><a href="{{ url('/shop-bracelet') }}">BROWSE</a></p>
     </div>
     <div id='section5'>
@@ -67,7 +71,9 @@
     <div class="section six" id="earrings">
         <p class="t1">EARRINGS</p>
         <p class="t2">SOMETHING CATCHY</p>
-        <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        <p class="t3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute
             irure dolor in reprehenderit in voluptate velit esse.</p>
         <p class="t4"><a href="{{ url('/shop-earring') }}">BROWSE</a></p>
     </div>
