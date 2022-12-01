@@ -28,6 +28,9 @@ Route::get('/test', function () {
 Route::get('/myProfile', function () {
     return view('myProfile');
 });
+Route::get('/myOrders', function () {
+    return view('myOrders');
+});
 
 Route::get('/shop-{type}','App\Http\Controllers\ShopController@index')->name('shopIndex');
 
