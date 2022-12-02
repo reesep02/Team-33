@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\Models\Shop;
+use App\helpers;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -31,16 +32,7 @@ class ShopController extends Controller
     {
         $product = Shop::where('name', $name)->firstOrFail();
 
-        if ($product->quantity > setting('site.stock_threshold')){
-            $stockLevel = 'In Stock';
-        }elseif($product->quantity <= setting('site.stock_threshold') && $product->quantity > 0){
-            $stockLevel = 'Low Stock';
-        }else{
-            $stockLevel = 'Not Available';
-        }
-
-
-
+        $stockLevel = getStockLevel($product->quantity);
         return view('product')->with([
             'product'=> $product,
             'stockLevel' => $stockLevel,
