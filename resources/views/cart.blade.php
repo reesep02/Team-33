@@ -136,7 +136,7 @@
                                                 </figure>
                                             </td>
 
-                                            <td> <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->quantity }}">
+                                            <td> <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
                                                 @for ($i = 1; $i < 5 + 1 ; $i++)
                                                     <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
                                                 @endfor
@@ -308,31 +308,34 @@
 
 
 
-        </body>
-        <script>
-            (function(){
-                const classname = document.querySelectorAll('.quantity')
-                Array.from(classname).forEach(function(element) {
-                    element.addEventListener('change', function() {
-                        const id = element.getAttribute('data-id')
-                        axios.patch(`<?php echo URL::current(); ?>/${id}`, {
-                            quantity: this.value
+</body>
+<script>
+    (function(){
+        const classname = document.querySelectorAll('.quantity')
 
-                        })
-                        .then(function (response) {
-                            console.log(response);
-                            window.location.href = '{{route('cart.index')}}'
-                        })
-                        .catch(function (error) {
-                            console.log(error);
-                            window.location.href = '{{route('cart.index')}}'
-                        });
-                    })
+        Array.from(classname).forEach(function(element) {
+            element.addEventListener('change', function() {
+                const id = element.getAttribute('data-id')
+                const productQuantity = element.getAttribute('data-productQuantity')
+
+                axios.patch(`<?php echo URL::current(); ?>/${id}`, {
+                    quantity: this.value,
+                    productQuantity: productQuantity
                 })
-            })();
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        </html>
+                .then(function (response) {
+                    // console.log(response);
+                    window.location.href = '{{ route('cart.index') }}'
+                })
+                .catch(function (error) {
+                    // console.log(error);
+                    window.location.href = '{{ route('cart.index') }}'
+                });
+            })
+        })
+    })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
 
 <body class="d-flex flex-column min-vh-100">
     <footer class="site-footer sticky-bottom footer mt-auto py-3 bg-dark app-footer-footer">
