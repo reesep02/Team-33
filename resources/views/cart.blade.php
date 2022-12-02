@@ -3,7 +3,7 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');body{background-color: #eeeeee;font-family: 'Open Sans',serif;font-size: 14px}.container-fluid{margin-top:0px}.card-body{-ms-flex: 1 1 auto;flex: 1 1 auto;padding: 1.40rem}.img-sm{width: 80px;height: 80px}.itemside .info{padding-left: 15px;padding-right: 7px}.table-shopping-cart .price-wrap{line-height: 1.2}.table-shopping-cart .price{font-weight: bold;margin-right: 5px;display: block}.text-muted{color: #969696 !important}a{text-decoration: none !important}.card{position: relative;display: -ms-flexbox;display: flex;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0,0,0,.125);border-radius: 0px}.itemside{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%}.dlist-align{display: -webkit-box;display: -ms-flexbox;display: flex}[class*="dlist-"]{margin-bottom: 5px}.coupon{border-radius: 1px}.price{font-weight: 600;color: #212529}.btn.btn-out{outline: 1px solid #fff;outline-offset: -5px}.btn-main{border-radius: 2px;text-transform: capitalize;font-size: 15px;padding: 10px 19px;cursor: pointer;color: #fff;width: 100%}.btn-light{color: #ffffff;background-color: #F44336;border-color: #f8f9fa;font-size: 12px}.btn-light:hover{color: #ffffff;background-color: #F44336;border-color: #F44336}.btn-apply{font-size: 11px}
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');body{background-color: #eeeeee;font-family: 'Open Sans',serif;font-size: 14px}.container-fluid{margin-top:0px}.card-body{-ms-flex: 1 1 auto;flex: 1 1 auto;padding: 1.40rem}.img-sm{width: 80px;height: 80px}.itemside .info{padding-left: 15px;padding-right: 7px}.table-shopping-cart .price-wrap{line-height: 1.2}.table-shopping-cart .price{font-weight: bold;margin-right: 5px;display: block}.text-muted{color: #969696 !important}a{text-decoration: none !important}.card{position: relative;display: -ms-flexbox;display: flex;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0,0,0,.125);border-radius: 0px}.itemside{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%}.dlist-align{display: -webkit-box;display: -ms-flexbox;display: flex}[class*="dlist-"]{margin-bottom: 5px}.coupon{border-radius: 1px}.price{font-weight: 600;color: #212529}.btn.btn-out{outline: 1px solid #fff;outline-offset: -5px}.btn-main{border-radius: 2px;text-transform: capitalize;font-size: 15px;padding: 10px 19px;cursor: pointer;color: #fff;width: 100%}.btn-light{color: #ffffff;background-color: #F44336;border-color: #f8f9fa;font-size: 12px}.btn-light:hover{color: #ffffff;background-color: #F44336;border-color: #F44336}.btn-apply{font-size: 11px}.title{font-weight: 600; text-decoration: underline;}.btn-sec{background-color: #dbab27; width: 100%;}.btn-purchase{background-color: #f7c02b;}
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="{{ asset('favicon.jpg') }}">
@@ -88,7 +88,7 @@
     <h1>Login to view cart<h1>
         @else
 
-        <div style="margin-top: 5rem; margin-bottom: 2rem" class="container-fluid">  <!-- Delete this margin-top when navbar is fixed !-->
+        <div style="margin-top: 5rem; margin-bottom: 2rem" class="container-fluid">
             <div class="row">
                 <aside class="col-lg-9">
                     @if (session()->has('success_message'))
@@ -106,7 +106,7 @@
                         </ul>
                     </div>
                     @endif
-                    <h1>My Cart:</h1>
+                    <h1 class="title">My Cart:</h1>
                     <div>
 
 
@@ -184,7 +184,7 @@
                             </div>
                             @else
                             <div class="card">
-                                <h2>No Items In Shopping cart</h2>
+                                <h4>No Items In Shopping cart</h4>
                             </div>
                             @endif
                         </div>
@@ -217,15 +217,15 @@
                                     <dd class="text-right text-dark b ml-3"><strong>{{ presentPrice(Cart::total()) }}</strong></dd>
                                 </dl>
                                 <hr>
-                                @if (Cart::count() > 0)
-                                <a href="{{ route('checkout.index') }}" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a>
+                                @if (Cart::count() == 0)
+                                <a href="{{ route('checkout.index') }}" class="btn-purchase btn-out btn-main mx-3" data-abc="true"> Make Purchase </a>
                                 @endif
-                                <a href="{{ url('/') }}" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+                                <a href="{{ url('/') }}"class="btn-sec btn-out btn-main mt-2 mx-3" data-abc="true">Continue Shopping</a>
                             </div>
                         </div>
                     </aside>
                     <aside class="col-lg-9">
-                        <h1 style="margin-top: 1rem">My WhishList:</h1>
+                        <h1 style="margin-top: 1rem" class="title">My WishList:</h1>
                         @if (Cart::instance('saveForLater')->count() > 0)
                         <div class="card">
                             <h1>{{ Cart::instance('saveForLater')->count() }} item(s) In WishList</h1>
@@ -295,7 +295,7 @@
                         </div>
                         @else
                         <div class="card">
-                            <h2>No Items In WhishList</h2>
+                            <h4>No Items In WishList</h4>
                         </div>
                         @endif
                     </aside>
