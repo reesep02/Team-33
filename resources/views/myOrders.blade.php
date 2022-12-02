@@ -10,12 +10,12 @@
 <body class="d-flex flex-column min-vh-100">
     <section id="banner" class="my-5 py-4">
         <div class="container-flex">
-            <h5 class="pt-3 title-text">Welcome back, Thomas </h5>
+            <h5 class="pt-3 title-text">Welcome back, {{ Auth::user()->name }} </h5>
         </div>
     </section>
 
     <section id="list-banner" class="container-flex mb-3 ">
-        <a class="btn btn-bar mr-5" href="{{url('myOrders')}}">My Orders</a>
+        <a class="btn btn-bar btn-live mr-5" href="{{url('myOrders')}}">My Orders</a>
         <a class="btn btn-bar ml-5" href="{{url('/myProfile')}}">My Profile</a>
     </section>
 
