@@ -20,7 +20,8 @@ class Shop extends Model
         'featured',
         'created_at',
         'updated_at',
-        'type'
+        'type',
+        'quantity'
 
     ];
 

@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Order;
+use App\Models\Shop;
 use App\Models\helpers;
 use App\Models\OrderProduct;
 use Stripe\Exception\ApiErrorException;
@@ -128,6 +129,9 @@ class StripeController extends Controller
 
 
             $order = $this->addToOrdersTables($request, null);
+
+            $this->decreaseQuantities();
+
             Cart::instance('default')->destroy();
             return redirect()->route('confirmation.index');
         } catch(\Stripe\Exception\ApiErrorException $e){
@@ -174,6 +178,15 @@ class StripeController extends Controller
         }
 
         return $order;
+    }
+
+
+    protected function decreaseQuantities(){
+        foreach (Cart::content() as $item) {
+            $product = Shop::find($item->model->id);
+
+            $product->update(['quantity' => $product->quantity - $item->qty]);
+        }
     }
 
 

@@ -182,11 +182,11 @@
                                     </tbody>
                                 </table>
                             </div>
-                            @else
+                        @else
                             <div class="card">
                                 <h4>No Items In Shopping cart</h4>
                             </div>
-                            @endif
+                        @endif
                         </div>
                     </aside>
 
@@ -217,7 +217,7 @@
                                     <dd class="text-right text-dark b ml-3"><strong>{{ presentPrice(Cart::total()) }}</strong></dd>
                                 </dl>
                                 <hr>
-                                @if (Cart::count() == 0)
+                                @if (Cart::count() > 0)
                                 <a href="{{ route('checkout.index') }}" class="btn-purchase btn-out btn-main mx-3" data-abc="true"> Make Purchase </a>
                                 @endif
                                 <a href="{{ url('/') }}"class="btn-sec btn-out btn-main mt-2 mx-3" data-abc="true">Continue Shopping</a>

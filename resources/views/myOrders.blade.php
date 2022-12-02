@@ -13,6 +13,21 @@
             <h5 class="pt-3 title-text">Welcome back, {{ Auth::user()->name }} </h5>
         </div>
     </section>
+    @if (session()->has('success_message'))
+    <div class="alert alert-success">
+        {{ session()->get('success_message') }}
+    </div>
+    @endif
+
+    @if(count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 
     <section id="list-banner" class="container-flex mb-3 ">
         <a class="btn btn-bar btn-live mr-5" href="{{url('myOrders')}}">My Orders</a>
@@ -21,34 +36,34 @@
 
     <div class="container">
         <div class="row">
+            @foreach ( $orders as $order)
             <div class="card mb-3">
                 <div class="card-header">
                     <div class="order-header-items">
-                        <div>Order Placed: <p> 26th Nov 2022</p>
+                        <div>Order Placed: <p> {{$order->created_at}}</p>
                         </div>
-                        <div>Order Number: <p> 0001 </p>
+                        <div>Order ID: <p> {{$order->id}}</p>
                         </div>
-                        <div>Total: <p>£300 </p>
+                        <div>Total: <p>{{presentPrice($order->billing_total)}}</p>
                         </div>
+                        <div><a href="{{ route('orders.show', $order->id) }}">| Click For Order Details |</a></div>
                     </div>
                 </div>
-                <div>
+                @foreach ( $order->products as $product )
+
                     <div class="card-body">
-                        <div><a href="btn-bar">| Order Details | </a></div>
-                        <div><a href="btn-bar">Invoice</a></div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="order-product-item">
-                        <div><img src="images\img.1.jpg" class="order-img">
-                            <p> Sterling Silver bracelet</p>
-                            <div>Item cost: £300</div>
-                            <div>Quantity: 1</div>
+                        <div class="order-product-item">
+                            <div><img src="{{ asset('storage/'.$product->image) }}" alt="gallery image" class="order-img">
+                                <p>{{$product->name}}</p>
+                                <div>{{presentPrice($product->price)}}</div>
+                                <div>Quantity Bought: {{$product->pivot->quantity}}</div>
+                            </div>
                         </div>
                     </div>
+                @endforeach
                 </div>
+            @endforeach
             </div>
         </div>
-    </div>
-</body>
-@endsection
+    </body>
+    @endsection

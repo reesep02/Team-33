@@ -25,12 +25,14 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/myProfile', function () {
-    return view('myProfile');
+Route::middleware('auth')->group(function () {
+    Route::get('/myProfile', 'App\Http\Controllers\UsersController@edit')->name('users.edit');
+    Route::patch('/myProfile', 'App\Http\Controllers\UsersController@update')->name('users.update');
+
+    Route::get('/myOrders', 'App\Http\Controllers\OrdersController@index')->name('orders.index');
+    Route::get('/myOrders/{order}', 'App\Http\Controllers\OrdersController@show')->name('orders.show');
 });
-Route::get('/myOrders', function () {
-    return view('myOrders');
-});
+
 
 Route::get('/shop-{type}', 'App\Http\Controllers\ShopController@index')->name('shopIndex');
 
@@ -71,3 +73,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
