@@ -111,19 +111,43 @@ class StripeController extends Controller
          \Stripe\Stripe::setApiKey(config(key: 'stripe.sk'));
 
 
-         try {
-             if($request->payment_method_id){
-                 $intent = \Stripe\PaymentIntent::create([
-                     'payment_method' => $request->payment_method_id,
-                     'amount' => calculateOrderAmount(),
-                     'currency' => 'gbp',
-                     'confirmation_method' => 'manual',
-                     'confirm' => true,
-                 ]);
-             }
+        try {
+            if($request->payment_method_id){
+                $intent = \Stripe\PaymentIntent::create([
+                    'payment_method' => $request->payment_method_id,
+                    'amount' => calculateOrderAmount(),
+                    'currency' => 'gbp',
+                    'confirmation_method' => 'manual',
+                    'confirm' => true,
+
+                ]);
+            }
 
 
 
+
+
+            $order = $this->addToOrdersTables($request, null);
+            Cart::instance('default')->destroy();
+            return redirect()->route('confirmation.index');
+        } catch(\Stripe\Exception\ApiErrorException $e){
+            $this->addToOrdersTables($request, $e->getMessage());
+            return back()->withErrors('Error! ' . $e->getMessage());
+            ([
+
+            'error' => $e->getMessage()
+            ]);
+        }
+
+
+
+
+
+
+    }
+    protected function addToOrdersTables($request, $error)
+    {
+        // Insert into orders table
         $order = Order::create([
             'user_id' => auth()->user() ? auth()->user()->id : null,
             'billing_email' => $request->email,
@@ -137,9 +161,10 @@ class StripeController extends Controller
             'billing_subtotal' => Cart::instance('default')->subtotal(),
             'billing_tax' => Cart::instance('default')->tax(),
             'billing_total' => Cart::instance('default')->total(),
-            'error' => null,
+            'error' => $error,
         ]);
 
+        // Insert into order_product table
         foreach (Cart::content() as $item) {
             OrderProduct::create([
                 'order_id' => $order->id,
@@ -147,19 +172,8 @@ class StripeController extends Controller
                 'quantity' => $item->qty,
             ]);
         }
-        Cart::instance('default')->destroy();
-        return view('thanks');
-        }catch(\Stripe\Exception\ApiErrorException $e){
-            ([
-            'error' => $e->getMessage()
-            ]);
-        }
 
-
-
-
-
-
+        return $order;
     }
 
 
