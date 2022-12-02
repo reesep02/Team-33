@@ -244,9 +244,9 @@ main {
 
 .t4:hover {
     width: 150px;
-    color: #73622a;
+    color: #706029;
     padding: 0 10px;
-    border-bottom: 2px solid #73622a;
+    border-bottom: 2px solid #746329;
 }
 
 .one {
@@ -305,6 +305,13 @@ img[alt="express"] {
 
 
 /* ............................ GENDER...............................*/
+
+h1 {
+    font-family: "Roboto Condensed";
+    font-size: 1.5rem;
+    font-weight: 100;
+    padding: 13px 0;
+}
 
 .two {
     position: relative;

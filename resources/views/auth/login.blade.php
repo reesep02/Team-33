@@ -7,8 +7,9 @@
         <div class="row justify-content-center">
             <div class="container-fluid  my-5">
                 <h1 class="row mb-3 justify-content-center title-text"> LOGIN </h1>
-                <h2 class="row mb-3 justify-content-center">Returning customer? welcome back.</h2>
-                <h6>New around here?<a class="btn btn-bar" href="{{ route('register')}}">Click here to sign up!</a></h6> <!-- be sure to add the hyperlink for the sign up page here-->
+                <h2 class="row mb-3 justify-content-center">Returning customer? Welcome back!</h2>
+                <h6>New around here?<a class="btn btn-bar" href="{{ route('register')}}">Click here to sign up!</a></h6>
+                <!-- be sure to add the hyperlink for the sign up page here-->
             </div>
 
             <div class="container-fluid">
@@ -17,7 +18,10 @@
                     <div class="container-sm">
                         <div class="row mb-3">
                             <div class="row mb-4">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror " name="email" placeholder="Email Address" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email"
+                                    class="form-control @error('email') is-invalid @enderror " name="email"
+                                    placeholder="Email Address" value="{{ old('email') }}" required autocomplete="email"
+                                    autofocus>
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -27,7 +31,9 @@
                             </div>
 
                             <div class="row mb-4">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="current-password">
+                                <input id="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    placeholder="Password" required autocomplete="current-password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
