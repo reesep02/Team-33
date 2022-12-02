@@ -20,6 +20,7 @@
     <section id="update-details" class="container-sm ">
 
         <form method="POST" action="{{ route('register') }}">
+            <!-- @Qalud this is the same setup as the register page right now, all the parameters are in the same places -->
             <!-- rework for update details -->
             @csrf
             <div class="row mb-4">
