@@ -639,13 +639,10 @@ img[alt="express"] {
 }
 
 
-/* ....................... SITEWIDE INTERACTIVE ELEMENTS ............................*/
+/* ....................... SITE-WIDE INTERACTIVE ELEMENTS ............................*/
 
 
-/* This was implemented by Josh, feel free to move this elsewhere if you feel it doesn't belong in here just let me know where you move it to please, otherwise just delete this comment*/
 
-
-/* This is utilising the bootstrap elements*/
 
 .btn-primary {
     background-color: #cc9c0c;
@@ -657,7 +654,19 @@ img[alt="express"] {
     border-color: #e2a600;
 }
 
-.btn-link {
+.btn-bar:hover {
+    text-decoration-color:#212529;
+    text-decoration: underline;
+    text-underline-position: below;
+
+}
+
+input[type] {
+    border: 3px;
+    border-radius: 0px;
+    background-color: #f3f3f3;
+}
+.btn-link, .btn-bar {
     color: #ebb000;
 }
 
