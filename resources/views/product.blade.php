@@ -24,6 +24,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
     <style>
@@ -171,25 +172,29 @@
             </div>
             <div class="col-lg-6 col-md-12 col-12">
                 <h6><a href="{{url('/')}}">Home</a> / <a href="{{url('/shop-'.$product->type)}}">{{ucfirst($product->type)}}</a></h6>
-                <h3 class="py-4">{{$product->name}}</h3>
+                <h1 class="py-4">{{$product->name}}</h1>
                 <h2>{{$product->presentPrice()}}</h2>
+                @if ($stockLevel == 'In Stock')
+                    <h6 class="badge bg-success">{!! $stockLevel !!}</h6>
+                @elseif($stockLevel == 'Low Stock')
+                    <h6 class="badge bg-warning text-dark">{!! $stockLevel !!}</h6>
+                @else
+                    <h6 class="badge bg-danger">{!! $stockLevel !!}</h6>
+                @endif
 
-                <input type="number" value="1">
-                <form action="{{ route('cart.store', $product) }}" method="POST">
-                    {{ csrf_field() }}
-                    <button type="submit" class="buy-btn">Add to Cart</button>
-                </form>
+                @if ($product->quantity > 0)
+                    <form action="{{ route('cart.store', $product) }}" method="POST">
+                        {{ csrf_field() }}
+                        <button type="submit" class="buy-btn">Add to Cart</button>
+                    </form>
+                @endif
                 <h4 class= "mt-5 mb-5">{{$product->details}}</h4>
                 <div class= "Product-info">
                     <p>{!! $product->description !!}
                     </p>
-                        <li>Available: <span>In stock</span></li>
                         <li>Category: <span>{{ucfirst($product->type)}}</span></li>
                         <li>Shipping Area: <span>All over the world</span></li>
                         <li>Shipping fee: <span>Free</span></li>
-
-
-
                 </div>
             </div>
         </div>

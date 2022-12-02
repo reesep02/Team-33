@@ -31,7 +31,20 @@ class ShopController extends Controller
     {
         $product = Shop::where('name', $name)->firstOrFail();
 
-        return view('product')->with('product', $product);
+        if ($product->quantity > setting('site.stock_threshold')){
+            $stockLevel = 'In Stock';
+        }elseif($product->quantity <= setting('site.stock_threshold') && $product->quantity > 0){
+            $stockLevel = 'Low Stock';
+        }else{
+            $stockLevel = 'Not Available';
+        }
+
+
+
+        return view('product')->with([
+            'product'=> $product,
+            'stockLevel' => $stockLevel,
+        ]);
     }
 
 }
