@@ -10,7 +10,7 @@
     <div class="section one">
         <p class="t2">EXPRESS YOURSELF</p>
         </p>
-        <p class="t2">THE FINEST SUBSTAINABLE JEWELLERY</p>
+        <p class="t2">THE FINEST SUSTAINABLE JEWELLERY</p>
         <p class="t3">CRAFTED BY OUR VERY OWN JEWELERS</p>
     </div>
 
