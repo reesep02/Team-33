@@ -88,7 +88,7 @@
     <h1>Login to view cart<h1>
         @else
 
-        <div style="margin-top: 5rem; margin-bottom: 2rem" class="container-fluid">  <!-- Delete this margin-top when navbar is fixed !-->
+        <div style="margin-top: 5rem; margin-bottom: 2rem" class="container-fluid">
             <div class="row">
                 <aside class="col-lg-9">
                     @if (session()->has('success_message'))
@@ -217,7 +217,7 @@
                                     <dd class="text-right text-dark b ml-3"><strong>{{ presentPrice(Cart::total()) }}</strong></dd>
                                 </dl>
                                 <hr>
-                                @if (Cart::count() == 0) <!-- remember to change back -->
+                                @if (Cart::count() == 0)
                                 <a href="{{ route('checkout.index') }}" class="btn-purchase btn-out btn-main mx-3" data-abc="true"> Make Purchase </a>
                                 @endif
                                 <a href="{{ url('/') }}"class="btn-sec btn-out btn-main mt-2 mx-3" data-abc="true">Continue Shopping</a>
