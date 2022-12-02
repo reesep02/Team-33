@@ -97,8 +97,8 @@ class StripeController extends Controller
 
      public function session(Request $request)
     {
-        \Stripe\Stripe::setApiKey(config(key:'stripe.sk'));
-
+        // \Stripe\Stripe::setApiKey(config(key:'stripe.sk'));
+        \Stripe\Stripe::setApiKey('sk_test_51M9mb6BlVQ0NJoLd0DjB7KpjSN8VGT8zkwWje0Zwxln3B3TzWyw3EgFuAV26aYpBEiZSpjL06QBDnxi6AvICfRd600vQF9ibXN');
         function calculateOrderAmount(): int {
             return Cart::instance('default')->total();
         }
