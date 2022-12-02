@@ -1,5 +1,8 @@
 <?php
 namespace App\Http\Controllers;
+use App\Models\Order;
+use App\Models\helpers;
+use App\Models\OrderProduct;
 use Stripe\Exception\ApiErrorException;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
@@ -87,12 +90,15 @@ class StripeController extends Controller
     public function success()
     {
 
+
+
         return view('thanks');
     }
 
      public function session(Request $request)
     {
-
+        // \Stripe\Stripe::setApiKey(config(key:'stripe.sk'));
+        \Stripe\Stripe::setApiKey('sk_test_51M9mb6BlVQ0NJoLd0DjB7KpjSN8VGT8zkwWje0Zwxln3B3TzWyw3EgFuAV26aYpBEiZSpjL06QBDnxi6AvICfRd600vQF9ibXN');
         function calculateOrderAmount(): int {
             return Cart::instance('default')->total();
         }
@@ -103,60 +109,71 @@ class StripeController extends Controller
             'email' => 'required|email|max:255'
         ]);
 
-         \Stripe\Stripe::setApiKey(config(key: 'stripe.sk'));
 
 
-         try {
-             if($request->payment_method_id){
-                 $intent = \Stripe\PaymentIntent::create([
-                     'payment_method' => $request->payment_method_id,
-                     'amount' => calculateOrderAmount(),
-                     'currency' => 'gbp',
-                     'confirmation_method' => 'manual',
-                     'confirm' => true,
-                 ]);
-             }
+        try {
+            if($request->payment_method_id){
+                $intent = \Stripe\PaymentIntent::create([
+                    'payment_method' => $request->payment_method_id,
+                    'amount' => calculateOrderAmount(),
+                    'currency' => 'gbp',
+                    'confirmation_method' => 'manual',
+                    'confirm' => true,
 
-        Cart::instance('default')->destroy();
-         }catch(\Stripe\Exception\ApiErrorException $e){
-
-            return view('thanks');
-            success();
-
-         ([
-         'error' => $e->getMessage()
-         ]);
+                ]);
+            }
 
 
 
 
-     }
 
-     return view('thanks');
-     success();
+            $order = $this->addToOrdersTables($request, null);
+            Cart::instance('default')->destroy();
+            return redirect()->route('confirmation.index');
+        } catch(\Stripe\Exception\ApiErrorException $e){
+            $this->addToOrdersTables($request, $e->getMessage());
+            return back()->withErrors('Error! ' . $e->getMessage());
+            ([
 
-
-
-
-        //  $session = \Stripe\Checkout\Session::create([
-        //      'line_items' => [
-        //          [
-        //              'price_data' => [
-        //                  'currency' => 'gbp',
-        //                  'product_data' => [
-        //                      'name' => 'Total Amount With VAT',
-        //                  ],
-        //                  'unit_amount' => calculateOrderAmount(), //pound 5
-        //              ],
-        //              'quantity' => 1,
-        //          ],
-        //      ],
-        //      'mode' => 'payment',
-        //      'success_url' => route(name:'strip.success'), //route to success method in this controller
-        //      'cancel_url' => route(name:'checkout.index')
-        //  ]);
+            'error' => $e->getMessage()
+            ]);
+        }
 
 
+
+
+
+
+    }
+    protected function addToOrdersTables($request, $error)
+    {
+        // Insert into orders table
+        $order = Order::create([
+            'user_id' => auth()->user() ? auth()->user()->id : null,
+            'billing_email' => $request->email,
+            'billing_name' => $request->name,
+            'billing_address' => $request->address,
+            'billing_city' => $request->city,
+            'billing_province' => $request->province,
+            'billing_postalcode' => $request->postalcode,
+            'billing_phone' => $request->phone,
+            'billing_name_on_card' => $request->name_on_card,
+            'billing_subtotal' => Cart::instance('default')->subtotal(),
+            'billing_tax' => Cart::instance('default')->tax(),
+            'billing_total' => Cart::instance('default')->total(),
+            'error' => $error,
+        ]);
+
+        // Insert into order_product table
+        foreach (Cart::content() as $item) {
+            OrderProduct::create([
+                'order_id' => $order->id,
+                'product_id' => $item->model->id,
+                'quantity' => $item->qty,
+            ]);
+        }
+
+        return $order;
     }
 
 

@@ -57,7 +57,7 @@ Route::get('empty', function () {
 Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout.index');
 
 Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('strip.session');
-Route::get('/success', 'App\Http\Controllers\StripeController@success')->name('strip.success');
+Route::get('/success', 'App\Http\Controllers\StripeController@success')->name('confirmation.index');
 
 Route::get('/about', function () {
     return view('about');

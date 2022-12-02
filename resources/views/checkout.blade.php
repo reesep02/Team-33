@@ -379,8 +379,12 @@
 
                     <h2>Payment</h2>
 
-                    <input type="hidden" name = "payment_method_id" id = "payment_method_id" class="payment_method_id" value ="" >
+                    <input type="hidden" name = "payment_method_id" id ="payment_method_id" class="payment_method_id" value ="" >
                     <div class="form-group">
+                        <div class="form-group">
+                            <label for="name_on_card">Name On Card</label>
+                            <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="" required>
+                        </div>
                         <label for="card-element">
                           Credit or debit card
                         </label>
@@ -411,7 +415,7 @@
                     @foreach (Cart::content() as $item)
                     <div class="checkout-table-row">
                         <div class="checkout-table-row-left">
-                            {{-- <img src="{{ productImage($item->model->image) }}" alt="item" class="checkout-table-img"> --}}
+                            <img src="{{asset('storage/'.$item->model->image)}}" alt="{{('storage/'.$item->model->image)}}" class="checkout-table-img">
                             <div class="checkout-item-details">
                                 <div class="checkout-table-item">{{ $item->model->name }}</div>
                                 <div class="checkout-table-description">{{ $item->model->details }}</div>
