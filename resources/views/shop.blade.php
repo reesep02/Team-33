@@ -18,7 +18,7 @@
                         <div class="col-md-6 col-lg-4 col-xl-3" style="padding-bottom: 1em">
                             <div>
                                     <div>
-                                        <a href="{{ route("shop.show", $product->name)}}"><img src="{{ asset('images/pexels-goran-vrakela-230290.jpg') }}" alt="ring" style="width: 200px; height:200px" ></a>
+                                        <a href="{{ route("shop.show", $product->name)}}"><img src="{{ asset('storage/'.$product->image) }}" alt="main-product-code" style="width: 200px; height:200px" ></a>
                                     </div>
                                     <div class="part-2">
                                             <a href="{{ route("shop.show", $product->name)}}"><h3 class="product-title">{{ $product->name }}</h3></a>

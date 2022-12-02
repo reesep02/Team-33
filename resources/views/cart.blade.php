@@ -129,7 +129,7 @@
                                         <tr>
                                             <td>
                                                 <figure class="itemside align-items-center">
-                                                    <div class="aside"><img src="https://i.imgur.com/1eq5kmC.png" class="img-sm"></div>
+                                                    <div class="aside"><img src="asset{{('storage/'.$item->image)}}" alt="Cart item picture" class="img-sm"></div>
                                                     <figcaption class="info"> <a href="{{ route('shop.show', $item->name) }}" class="title text-dark" data-abc="true">{{ $item->name }}</a>
                                                         {{-- <p class="text-muted small">SIZE: L </p> --}}
                                                     </figcaption>
@@ -242,7 +242,7 @@
                                         <tr>
                                             <td>
                                                 <figure class="itemside align-items-center">
-                                                    <div class="aside"><img src="https://i.imgur.com/1eq5kmC.png" class="img-sm"></div>
+                                                    <div class="aside"><img src="asset{{('storage/'.$item->image)}}" alt="wishlist picture" class="img-sm"></div>
                                                     <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">{{$item->name}}</a>
                                                         {{-- <p class="text-muted small">SIZE: L</p> --}}
                                                     </figcaption>
