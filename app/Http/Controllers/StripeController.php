@@ -97,6 +97,7 @@ class StripeController extends Controller
 
      public function session(Request $request)
     {
+        \Stripe\Stripe::setApiKey(config(key:'stripe.sk'));
 
         function calculateOrderAmount(): int {
             return Cart::instance('default')->total();
@@ -108,7 +109,6 @@ class StripeController extends Controller
             'email' => 'required|email|max:255'
         ]);
 
-         \Stripe\Stripe::setApiKey(config(key: 'stripe.sk'));
 
 
         try {
