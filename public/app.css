@@ -668,6 +668,11 @@ h1 {
 
 }
 
+.btn-live {
+    text-decoration: underline;
+}
+
+
 input[type] {
     border: 3px;
     border-radius: 0px;

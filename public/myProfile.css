@@ -24,3 +24,8 @@
     border: 0px;
     border-radius: 0px;
 }
+
+.subheader {
+    text-decoration: underline;
+    font-weight: 600;
+}

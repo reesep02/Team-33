@@ -8,13 +8,13 @@
 <body class="d-flex flex-column min-vh-100">
     <section id="banner" class="my-5 py-4">
         <div class="container-flex">
-            <h5 class="pt-3 title-text">Welcome back, Thomas </h5>
+            <h5 class="pt-3 title-text">Welcome back, {{ Auth::user()->name }} </h5>
         </div>
     </section>
 
     <section id="list-banner" class="container-flex mb-3 ">
         <a class="btn btn-bar mr-5" href="{{url('myOrders')}}">My Orders</a>
-        <a class="btn btn-bar ml-5" href="{{url('/myProfile')}}">My Profile</a>
+        <a class="btn btn-bar btn-live ml-5" href="{{url('/myProfile')}}">My Profile</a>
     </section>
 
     <section id="update-details" class="container-sm ">
@@ -23,11 +23,11 @@
             <!-- rework for update details -->
             @csrf
             <div class="row mb-4">
-                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" value="Thomas" required autocomplete="name" autofocus>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" value="{{Auth::user()->name}}" required autocomplete="name" autofocus>
             </div>
 
             <div class="row mb-4">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="thomas@gmail.com" required autocomplete="email">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{Auth::user()->email}}" required autocomplete="email">
                 @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
