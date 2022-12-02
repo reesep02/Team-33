@@ -190,7 +190,7 @@ main {
 .t0:nth-of-type(odd),
 .t1:nth-of-type(odd),
 .t2:nth-of-type(odd) {
-    background: linear-gradient(to right, #52411c, #d0a002);
+    background: linear-gradient(to right, #cacaca, #ffc400);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
