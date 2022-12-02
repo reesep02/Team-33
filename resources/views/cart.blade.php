@@ -218,9 +218,9 @@
                                 </dl>
                                 <hr>
                                 @if (Cart::count() > 0)
-                                <button href="{{ route('checkout.index') }}" class="btn-purchase btn-out btn-main mt-2" data-abc="true"> Make Purchase </button>
+                                <a href="{{ route('checkout.index') }}"><button href="{{ route('checkout.index') }}" class="btn-purchase btn-out btn-main mt-2" data-abc="true"> Make Purchase </button></a>
                                 @endif
-                                <button href="{{ url('/') }}"class="btn-sec btn-out btn-main mt-2" data-abc="true">Continue Shopping</button>
+                                <a href="{{ url('/') }}"><button href="{{ url('/') }}" class="btn-sec btn-out btn-main mt-2" data-abc="true">Continue Shopping</button></a>
                             </div>
                         </div>
                     </aside>
