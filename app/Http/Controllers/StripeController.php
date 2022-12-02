@@ -1,5 +1,8 @@
 <?php
 namespace App\Http\Controllers;
+use App\Models\Order;
+use App\Models\helpers;
+use App\Models\OrderProduct;
 use Stripe\Exception\ApiErrorException;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
@@ -87,6 +90,8 @@ class StripeController extends Controller
     public function success()
     {
 
+
+
         return view('thanks');
     }
 
@@ -117,44 +122,42 @@ class StripeController extends Controller
                  ]);
              }
 
+
+
+        $order = Order::create([
+            'user_id' => auth()->user() ? auth()->user()->id : null,
+            'billing_email' => $request->email,
+            'billing_name' => $request->name,
+            'billing_address' => $request->address,
+            'billing_city' => $request->city,
+            'billing_province' => $request->province,
+            'billing_postalcode' => $request->postalcode,
+            'billing_phone' => $request->phone,
+            'billing_name_on_card' => $request->name_on_card,
+            'billing_subtotal' => Cart::instance('default')->subtotal(),
+            'billing_tax' => Cart::instance('default')->tax(),
+            'billing_total' => Cart::instance('default')->total(),
+            'error' => null,
+        ]);
+
+        foreach (Cart::content() as $item) {
+            OrderProduct::create([
+                'order_id' => $order->id,
+                'product_id' => $item->model->id,
+                'quantity' => $item->qty,
+            ]);
+        }
         Cart::instance('default')->destroy();
-         }catch(\Stripe\Exception\ApiErrorException $e){
-
-            return view('thanks');
-            success();
-
-         ([
-         'error' => $e->getMessage()
-         ]);
+        return view('thanks');
+        }catch(\Stripe\Exception\ApiErrorException $e){
+            ([
+            'error' => $e->getMessage()
+            ]);
+        }
 
 
 
 
-     }
-
-     return view('thanks');
-     success();
-
-
-
-
-        //  $session = \Stripe\Checkout\Session::create([
-        //      'line_items' => [
-        //          [
-        //              'price_data' => [
-        //                  'currency' => 'gbp',
-        //                  'product_data' => [
-        //                      'name' => 'Total Amount With VAT',
-        //                  ],
-        //                  'unit_amount' => calculateOrderAmount(), //pound 5
-        //              ],
-        //              'quantity' => 1,
-        //          ],
-        //      ],
-        //      'mode' => 'payment',
-        //      'success_url' => route(name:'strip.success'), //route to success method in this controller
-        //      'cancel_url' => route(name:'checkout.index')
-        //  ]);
 
 
     }

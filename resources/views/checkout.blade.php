@@ -379,8 +379,12 @@
 
                     <h2>Payment</h2>
 
-                    <input type="hidden" name = "payment_method_id" id = "payment_method_id" class="payment_method_id" value ="" >
+                    <input type="hidden" name = "payment_method_id" id ="payment_method_id" class="payment_method_id" value ="" >
                     <div class="form-group">
+                        <div class="form-group">
+                            <label for="name_on_card">Name On Card</label>
+                            <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="" required>
+                        </div>
                         <label for="card-element">
                           Credit or debit card
                         </label>
